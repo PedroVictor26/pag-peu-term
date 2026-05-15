@@ -1,6 +1,7 @@
 import { Hero } from '@/components/Hero'
 import { Manifesto } from '@/components/Manifesto'
 import { Capabilities } from '@/components/Capabilities'
+import { Extras } from '@/components/Extras'
 import { Specs } from '@/components/Specs'
 import { Pricing } from '@/components/Pricing'
 import { Install } from '@/components/Install'
@@ -13,6 +14,7 @@ export default function HomePage() {
       <Hero />
       <Manifesto />
       <Capabilities />
+      <Extras />
       <Specs />
       <Pricing />
       <Install />

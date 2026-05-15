@@ -34,22 +34,31 @@ export function Manifesto() {
                   Cada CLI nova de IA virava mais uma janela de PowerShell. Em
                   abril eu tinha quatro Claudes rodando ao mesmo tempo, um
                   Gemini, dois <em className="text-[color:var(--color-ink)]">npm run dev</em>,
-                  três tmux improvisados via WSL — e duas reuniões pra
-                  comparecer entre as 30 abas de browser.
+                  três tmux improvisados via WSL — e umas 30 abas de browser
+                  entre as reuniões.
                 </p>
                 <p>
-                  Tentei Windows Terminal, Warp, Wave, Tabby. Todos resolvem o
-                  problema do split. Nenhum entende que o que eu mais faço é
-                  <span style={{ color: 'var(--color-ink)' }}> conversar com IA dentro de um terminal</span>.
+                  Vi o{' '}
+                  <a
+                    href="https://academy.dantetesta.com.br/"
+                    target="_blank"
+                    rel="noopener"
+                    className="link-sweep"
+                  >
+                    Dante Shell ↗
+                  </a>
+                  , do Dante Testa, pra macOS. Peguei a referência e adaptei pro
+                  Windows com o que eu precisava no dia a dia.
                 </p>
               </div>
               <div className="space-y-5">
                 <p>
-                  Quis um botão pra falar — porque digitar prompt de 300 chars
-                  cansa. Quis um botão pra selecionar erro e o GPT explicar.
-                  Quis configurar meus próprios CLIs (Aider, Cody, sgpt, o que
-                  for) com 1 click — não escrever <em className="text-[color:var(--color-ink)]">alias</em> no perfil
-                  do PowerShell.
+                  O resultado faz <span style={{ color: 'var(--color-ink)' }}>tudo isso num app só</span>:
+                  split de até 9 terminais, microfone que vira prompt pra IA,
+                  IA que explica seu erro de stack trace, editor de arquivos
+                  embutido, viewer de imagem/PDF, snippets reutilizáveis,
+                  favoritos com drag-and-drop e custom providers — pra plugar
+                  qualquer CLI (Aider, Cody, sgpt, Queen…) em 1 click.
                 </p>
                 <p
                   className="border-l-2 pl-5 italic"
@@ -58,7 +67,7 @@ export function Manifesto() {
                     color: 'var(--color-ink)'
                   }}
                 >
-                  Não existia pra Windows. Então fiz. Em <span className="font-mono not-italic">~6 semanas</span>, sozinho. Eis o resultado.
+                  Pra Windows não existia. Agora existe. <span className="font-mono not-italic">v0.3.4</span>, e crescendo.
                 </p>
                 <p className="pt-2 font-display-italic text-2xl leading-tight" style={{ color: 'var(--color-ink)' }}>
                   — Pedro V.

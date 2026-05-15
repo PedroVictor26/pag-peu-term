@@ -82,7 +82,7 @@ export function Install() {
       <div className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
         <div className="mb-16 grid grid-cols-12 gap-x-6">
           <div className="col-span-12 md:col-span-4">
-            <span className="section-marker">№06 · Instalação</span>
+            <span className="section-marker">№07 · Instalação</span>
             <h2 className="headline-section mt-4">
               Como você <em style={{ color: 'var(--color-amber)' }}>recebe</em>.
             </h2>

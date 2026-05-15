@@ -20,7 +20,7 @@ export function Pricing() {
         <div className="grid grid-cols-1 gap-x-12 gap-y-16 md:grid-cols-12">
           {/* Esquerda — manifesto de preço */}
           <div className="md:col-span-5">
-            <span className="section-marker">№05 · Preço</span>
+            <span className="section-marker">№06 · Preço</span>
             <h2 className="headline-section mt-4">
               Paga uma vez.<br />
               Usa <em style={{ color: 'var(--color-amber)' }}>pra sempre</em>.

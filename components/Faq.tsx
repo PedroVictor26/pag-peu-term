@@ -94,6 +94,25 @@ const QAS: QA[] = [
         volume mínimo.
       </>
     )
+  },
+  {
+    q: 'É baseado no Dante Shell?',
+    a: (
+      <>
+        Sim — o{' '}
+        <a
+          href="https://academy.dantetesta.com.br/"
+          target="_blank"
+          rel="noopener"
+          className="link-sweep"
+        >
+          Dante Shell ↗
+        </a>{' '}
+        (Dante Testa, pra macOS) foi a referência inicial. Peguei o conceito e
+        adaptei pra Windows, com features próprias (Groq pra voz, custom
+        providers, editor embutido).
+      </>
+    )
   }
 ]
 
@@ -105,7 +124,7 @@ export function Faq() {
           {/* Esquerda — title sticky */}
           <div className="col-span-12 mb-10 md:col-span-4 md:mb-0">
             <div className="sticky top-10 flex flex-col gap-3">
-              <span className="section-marker">№07 · Q&amp;A</span>
+              <span className="section-marker">№08 · Q&amp;A</span>
               <h2 className="headline-section">
                 Antes que você <em style={{ color: 'var(--color-amber)' }}>pergunte</em>.
               </h2>

@@ -46,6 +46,25 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Crédito de inspiração — curto */}
+        <p className="mt-6 border-t border-[color:var(--color-rule)] pt-5 text-[12px] leading-relaxed text-[color:var(--color-ink-muted)]">
+          <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-amber)]">
+            Inspiração
+          </span>
+          <span className="ml-3">
+            Adaptado pra Windows a partir do{' '}
+            <a
+              href="https://academy.dantetesta.com.br/"
+              target="_blank"
+              rel="noopener"
+              className="link-sweep"
+            >
+              Dante Shell ↗
+            </a>{' '}
+            (Dante Testa · macOS).
+          </span>
+        </p>
+
         {/* Bottom row: meta info */}
         <div className="mt-8 flex flex-col items-start justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-dim)] md:flex-row md:items-center">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1">

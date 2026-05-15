@@ -89,7 +89,7 @@ export function Specs() {
       <div className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
         <div className="mb-12 grid grid-cols-12 gap-x-6">
           <div className="col-span-12 md:col-span-3">
-            <span className="section-marker">№04 · Datasheet</span>
+            <span className="section-marker">№05 · Datasheet</span>
             <hr className="editorial-rule-amber mt-3 w-12" />
           </div>
           <div className="col-span-12 mt-6 md:col-span-9 md:mt-0">
