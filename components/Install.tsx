@@ -1,151 +1,152 @@
-import { Download, ShieldCheck, AlertTriangle, ArrowRight, Settings } from 'lucide-react'
+import { AlertTriangle, ArrowUpRight } from 'lucide-react'
+
+interface Step {
+  num: string
+  title: string
+  body: React.ReactNode
+  aside?: React.ReactNode
+}
+
+const STEPS: Step[] = [
+  {
+    num: '01',
+    title: 'Você compra. Recebe o link.',
+    body: (
+      <>
+        Após o pagamento (Pix · Cartão · Boleto), você recebe automaticamente um
+        link pra baixar o instalador{' '}
+        <code className="font-mono text-[color:var(--color-amber)]">
+          Peu-Term-Setup-X.X.X.exe
+        </code>{' '}
+        (≈ 72 MB). Salva em qualquer pasta.
+      </>
+    ),
+    aside: <span className="font-mono text-xs text-[color:var(--color-ink-dim)]">~30s</span>
+  },
+  {
+    num: '02',
+    title: 'Windows reclama. Você passa por cima.',
+    body: (
+      <>
+        O instalador não é assinado digitalmente (cert custa caro pra dev indie
+        — vem em release próximo). O SmartScreen vai mostrar um aviso. Click em{' '}
+        <strong style={{ color: 'var(--color-ink)' }}>Mais informações</strong> →{' '}
+        <strong style={{ color: 'var(--color-amber)' }}>Executar mesmo assim</strong>.
+      </>
+    ),
+    aside: (
+      <div
+        className="flex items-start gap-2 border-l border-[color:var(--color-amber)] bg-[color:var(--color-bg-paper)] p-3 text-[11px] leading-relaxed text-[color:var(--color-ink-muted)]"
+        style={{ borderLeftWidth: '2px' }}
+      >
+        <AlertTriangle
+          className="mt-0.5 h-3 w-3 flex-shrink-0"
+          style={{ color: 'var(--color-amber)' }}
+        />
+        <span>
+          Aviso esperado em apps de dev indie. Sem vírus — código aberto pra
+          quem comprou (NDA), revisado por antivirus padrão.
+        </span>
+      </div>
+    )
+  },
+  {
+    num: '03',
+    title: 'Pra usar voz/IA, gera 1 key na Groq.',
+    body: (
+      <>
+        A voz e o "explicar erro" usam Groq (free tier ~25 req/min, mais que
+        suficiente). Vai em{' '}
+        <a
+          href="https://console.groq.com/keys"
+          target="_blank"
+          rel="noopener"
+          className="link-sweep"
+        >
+          console.groq.com/keys ↗
+        </a>{' '}
+        — cria conta grátis, gera uma API key, cola em{' '}
+        <strong style={{ color: 'var(--color-ink)' }}>
+          Configurações → Voz → Terminal
+        </strong>
+        . Key fica cifrada localmente (DPAPI).
+      </>
+    ),
+    aside: <span className="font-mono text-xs text-[color:var(--color-ink-dim)]">opcional · ~1 min</span>
+  }
+]
 
 export function Install() {
   return (
-    <section id="install" className="mx-auto max-w-6xl px-6 py-24">
-      <div className="mb-14 text-center">
-        <span className="text-xs font-semibold uppercase tracking-widest text-fuchsia-300">
-          Em 3 passos
-        </span>
-        <h2 className="mt-3 text-balance text-4xl font-bold tracking-tight text-white md:text-5xl">
-          Como instalar
-        </h2>
-        <p className="mt-4 text-balance text-neutral-400">
-          Windows 10/11 64-bit. Não precisa criar conta — funciona offline
-          (exceto features de IA, que dependem da Groq).
-        </p>
-      </div>
+    <section className="relative border-b border-[color:var(--color-rule)]">
+      <div className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
+        <div className="mb-16 grid grid-cols-12 gap-x-6">
+          <div className="col-span-12 md:col-span-4">
+            <span className="section-marker">№06 · Instalação</span>
+            <h2 className="headline-section mt-4">
+              Como você <em style={{ color: 'var(--color-amber)' }}>recebe</em>.
+            </h2>
+          </div>
+          <div className="col-span-12 mt-6 max-w-md md:col-span-8 md:col-start-5 md:mt-2 md:pt-3">
+            <p className="text-[15px] leading-relaxed text-[color:var(--color-ink-muted)]">
+              Não tem download direto na landing (a gente vende, não regala).
+              Você compra, recebe o link, instala. Tudo em menos de 3 minutos.
+            </p>
+          </div>
+        </div>
 
-      {/* CTA principal */}
-      <div className="mb-12 flex justify-center">
-        <a
-          href="#"
-          className="glow-cta flex items-center gap-3 rounded-xl bg-gradient-to-br from-fuchsia-500 to-pink-500 px-8 py-4 text-base font-semibold text-white transition hover:brightness-110"
-        >
-          <Download className="h-5 w-5" />
-          Baixar Peu-Term Setup v0.3.3
-          <span className="text-xs font-normal opacity-80">· 72 MB</span>
-        </a>
-      </div>
-
-      {/* Steps */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-        <Step
-          n={1}
-          title="Baixar o instalador"
-          body={
-            <>
-              Clica no botão acima e salva o{' '}
-              <code className="rounded bg-neutral-900 px-1.5 py-0.5 font-mono text-xs text-fuchsia-300">
-                Peu-Term-Setup-0.3.3.exe
-              </code>{' '}
-              em qualquer pasta.
-            </>
-          }
-        />
-        <Step
-          n={2}
-          title="Aceitar o SmartScreen"
-          body={
-            <div className="flex flex-col gap-2">
-              <p>
-                O Windows vai pedir confirmação porque o app ainda não é
-                assinado (vem aí). Click em{' '}
-                <strong className="text-amber-300">"Mais informações"</strong> →{' '}
-                <strong className="text-amber-300">"Executar mesmo assim"</strong>.
-              </p>
-              <div className="flex items-start gap-2 rounded-md border border-amber-900/40 bg-amber-950/20 p-3 text-xs text-amber-200">
-                <AlertTriangle className="mt-0.5 h-3.5 w-3.5 flex-shrink-0" />
-                <span>
-                  Aviso esperado em apps de devs indie. Sem vírus — código
-                  open-source pra quem comprou.
+        <ol className="divide-y divide-[color:var(--color-rule)] border-y border-[color:var(--color-rule)]">
+          {STEPS.map((step) => (
+            <li
+              key={step.num}
+              className="grid grid-cols-12 gap-x-6 gap-y-3 py-10 md:py-14"
+            >
+              {/* Num grande */}
+              <div className="col-span-2 md:col-span-1">
+                <span
+                  className="font-display-italic text-5xl leading-none"
+                  style={{
+                    color: 'var(--color-amber)',
+                    fontStyle: 'italic'
+                  }}
+                >
+                  {step.num}
                 </span>
               </div>
-            </div>
-          }
-        />
-        <Step
-          n={3}
-          title="Configurar a voz (opcional)"
-          body={
-            <>
-              Pra usar o microfone + explicar erro, gera uma API key grátis em{' '}
-              <a
-                href="https://console.groq.com/keys"
-                target="_blank"
-                rel="noopener"
-                className="text-fuchsia-300 underline-offset-2 hover:underline"
-              >
-                console.groq.com/keys
-              </a>{' '}
-              e cola em <strong>Configurações → Voz → Terminal</strong>.
-            </>
-          }
-        />
-      </div>
+              {/* Title + body */}
+              <div className="col-span-10 md:col-span-7">
+                <h3
+                  className="font-display-italic text-2xl leading-tight md:text-3xl"
+                  style={{ fontStyle: 'italic', color: 'var(--color-ink)' }}
+                >
+                  {step.title}
+                </h3>
+                <p className="mt-3 max-w-prose text-[15px] leading-relaxed text-[color:var(--color-ink-muted)]">
+                  {step.body}
+                </p>
+              </div>
+              {/* Aside */}
+              <div className="col-span-12 md:col-span-4">{step.aside}</div>
+            </li>
+          ))}
+        </ol>
 
-      {/* Trust block */}
-      <div className="mt-16 grid grid-cols-1 gap-4 md:grid-cols-3">
-        <TrustItem
-          icon={<ShieldCheck className="h-4 w-4 text-emerald-400" />}
-          title="Privacidade"
-          desc="API key encriptada via DPAPI do Windows. Áudio nunca toca o nosso servidor — vai direto pra Groq."
-        />
-        <TrustItem
-          icon={<Settings className="h-4 w-4 text-fuchsia-300" />}
-          title="Customização"
-          desc="Tudo persiste localmente em ~/.peu-term/. Sem cloud sync, sem login, sem telemetria."
-        />
-        <TrustItem
-          icon={<ArrowRight className="h-4 w-4 text-sky-400" />}
-          title="Pra Mac/Linux"
-          desc="No roadmap. Por hora só Windows 10/11. Quer ser avisado? Entra na comunidade."
-        />
+        {/* Bottom CTA */}
+        <div className="mt-16 flex flex-col items-start justify-between gap-4 border border-[color:var(--color-amber)] bg-[color:var(--color-bg-paper)] p-8 md:flex-row md:items-center">
+          <div>
+            <h4 className="font-display-italic text-2xl" style={{ fontStyle: 'italic' }}>
+              Pronto pra trocar 14 janelas por uma?
+            </h4>
+            <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.16em] text-[color:var(--color-ink-dim)]">
+              v0.3.4 · Windows 10/11 · 72 MB
+            </p>
+          </div>
+          <a href="#pricing" className="btn-prime amber-glow">
+            Adquirir agora
+            <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.2} />
+          </a>
+        </div>
       </div>
     </section>
-  )
-}
-
-function Step({
-  n,
-  title,
-  body
-}: {
-  n: number
-  title: string
-  body: React.ReactNode
-}) {
-  return (
-    <div className="flex flex-col rounded-xl border border-white/10 bg-white/[0.02] p-6">
-      <div className="mb-3 flex items-center gap-3">
-        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-fuchsia-500 to-pink-500 text-sm font-bold text-white">
-          {n}
-        </span>
-        <h3 className="text-base font-semibold text-white">{title}</h3>
-      </div>
-      <div className="text-sm leading-relaxed text-neutral-300">{body}</div>
-    </div>
-  )
-}
-
-function TrustItem({
-  icon,
-  title,
-  desc
-}: {
-  icon: React.ReactNode
-  title: string
-  desc: string
-}) {
-  return (
-    <div className="flex items-start gap-3 rounded-lg border border-white/5 bg-white/[0.02] p-4">
-      <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-md bg-white/5">
-        {icon}
-      </div>
-      <div>
-        <h4 className="text-sm font-medium text-white">{title}</h4>
-        <p className="mt-0.5 text-xs leading-relaxed text-neutral-400">{desc}</p>
-      </div>
-    </div>
   )
 }

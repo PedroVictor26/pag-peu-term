@@ -1,27 +1,24 @@
 import { Hero } from '@/components/Hero'
-import { TerminalMockup } from '@/components/TerminalMockup'
-import { Features } from '@/components/Features'
-import { Workflows } from '@/components/Workflows'
-import { Shortcuts } from '@/components/Shortcuts'
+import { Manifesto } from '@/components/Manifesto'
+import { Capabilities } from '@/components/Capabilities'
+import { Specs } from '@/components/Specs'
+import { Pricing } from '@/components/Pricing'
 import { Install } from '@/components/Install'
 import { Faq } from '@/components/Faq'
 import { Footer } from '@/components/Footer'
 
 export default function HomePage() {
   return (
-    <main className="relative isolate">
-      {/* Grid pattern overlay subtle */}
-      <div
-        aria-hidden="true"
-        className="grid-pattern pointer-events-none fixed inset-0 -z-10 opacity-40"
-      />
+    <main className="grain relative isolate">
       <Hero />
-      <TerminalMockup />
-      <Features />
-      <Workflows />
-      <Shortcuts />
+      <Manifesto />
+      <Capabilities />
+      <Specs />
+      <Pricing />
       <Install />
-      <Faq />
+      <div id="faq">
+        <Faq />
+      </div>
       <Footer />
     </main>
   )
