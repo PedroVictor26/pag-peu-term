@@ -85,21 +85,22 @@ export function Pricing() {
                   </span>
                 </div>
                 <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-ink-dim)]">
-                  Preço será definido em breve · Pix · Cartão · Boleto
+                  Valor e pagamento na Academy · Pix · Cartão · Boleto
                 </p>
               </div>
 
               {/* CTA */}
               <div className="border-y border-[color:var(--color-rule)] px-6 py-5">
                 <a
-                  href="#comprar"
+                  href="https://academy.dantetesta.com.br/download/peu-term-windows"
+                  target="_blank"
+                  rel="noopener"
                   className="group flex w-full items-center justify-between gap-3 border border-[color:var(--color-amber)] bg-[color:var(--color-amber)] px-6 py-4 text-[color:var(--color-bg)] transition hover:bg-[color:var(--color-amber-bright)]"
-                  aria-disabled="true"
                 >
                   <span className="font-mono text-xs font-medium uppercase tracking-[0.18em]">
-                    Em breve · entrar na lista
+                    Comprar na Academy ↗
                   </span>
-                  <span className="text-base">→</span>
+                  <span className="text-base transition group-hover:translate-x-0.5">→</span>
                 </a>
               </div>
 
