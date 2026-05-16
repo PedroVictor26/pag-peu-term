@@ -68,13 +68,18 @@ export function Hero() {
           {/* CTAs */}
           <div className="reveal reveal-4 mt-10 flex flex-wrap items-center gap-3">
             <a href="#pricing" className="btn-prime amber-glow">
-              <span>Adquirir</span>
+              <span>Adquirir · R$ 25</span>
               <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.2} />
             </a>
             <a href="#capabilities" className="btn-ghost">
               Como funciona
             </a>
           </div>
+
+          {/* Micro-texto de preço — reforça barato + vitalício */}
+          <p className="reveal reveal-4 mt-4 font-mono text-[11px] uppercase tracking-[0.14em] text-[color:var(--color-ink-dim)]">
+            Pagamento único · acesso vitalício · sem mensalidade
+          </p>
 
           {/* Trust line — datapoints em mono, não "trusted by N developers" */}
           <dl className="reveal reveal-5 mt-14 grid grid-cols-3 gap-x-4 border-t border-[color:var(--color-rule)] pt-6 text-xs">

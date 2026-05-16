@@ -62,13 +62,13 @@ export function Pricing() {
 
               {/* Preço — gigante */}
               <div className="px-6 pb-2 pt-8 md:pb-4 md:pt-10">
-                <div className="flex items-baseline gap-3">
+                <div className="flex items-baseline gap-2">
                   <span
                     className="font-display-italic leading-none"
                     style={{
                       fontStyle: 'italic',
-                      fontSize: 'clamp(5rem, 12vw, 9rem)',
-                      color: 'var(--color-ink)'
+                      fontSize: 'clamp(2.25rem, 5vw, 3.75rem)',
+                      color: 'var(--color-ink-muted)'
                     }}
                   >
                     R$
@@ -76,16 +76,21 @@ export function Pricing() {
                   <span
                     className="font-display leading-none"
                     style={{
-                      fontSize: 'clamp(5rem, 12vw, 9rem)',
+                      fontSize: 'clamp(5.5rem, 14vw, 10rem)',
                       color: 'var(--color-amber)',
                       fontStyle: 'italic'
                     }}
                   >
-                    ——
+                    25
+                  </span>
+                  <span
+                    className="font-mono text-[11px] uppercase tracking-[0.14em] text-[color:var(--color-ink-dim)]"
+                  >
+                    único
                   </span>
                 </div>
                 <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-ink-dim)]">
-                  Valor e pagamento na Academy · Pix · Cartão · Boleto
+                  Pagamento único · Pix · Cartão · Boleto · sem mensalidade
                 </p>
               </div>
 
