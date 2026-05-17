@@ -97,8 +97,7 @@ export function Specs() {
               Especificações <em style={{ color: 'var(--color-accent)' }}>completas</em>.
             </h2>
             <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-[color:var(--color-ink-muted)]">
-              Lista densa. Mono. Sem floreio. É pra você
-              decidir se isso aqui é o seu produto ou não.
+              Dados brutos. Decide você.
             </p>
           </div>
         </div>

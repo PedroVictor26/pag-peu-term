@@ -25,8 +25,7 @@ export function Capabilities() {
             </h2>
           </div>
           <p className="hidden max-w-xs text-sm leading-relaxed text-[color:var(--color-ink-muted)] md:block">
-            Quatro coisas que nenhum terminal pra Windows tem juntas. As outras
-            doze ficam na folha de specs abaixo.
+            Quatro diferenciais que nenhum terminal Windows tem juntos. O resto está nos specs.
           </p>
         </div>
 
@@ -324,24 +323,18 @@ const CAPABILITIES: Capability[] = [
     title: <>Até <em style={{ color: 'var(--color-accent)' }}>9 terminais</em> ao mesmo tempo. Cada um com PTY próprio.</>,
     body: (
       <>
-        Divide a tela em layouts{' '}
-        <span className="text-[color:var(--color-ink)]">1×1, 1×2, 2×2, até 3×3</span>{' '}
-        — ou ajusta linha-por-linha. Cada slot spawn um shell completo
-        (PowerShell, pwsh, cmd, bash, WSL) com PTY independente: rodam em
-        paralelo sem competir por buffer. Arrasta um header pra trocar slots
-        com outro. Maximiza um pra foco total com{' '}
+        Layouts de{' '}
+        <span className="text-[color:var(--color-ink)]">1×1 até 3×3</span>{' '}
+        — cada slot tem seu próprio PTY rodando em paralelo.{' '}
         <kbd className="kbd">Ctrl</kbd>
-        <kbd className="kbd">M</kbd> e restaura sem perder uma linha do
-        scrollback. CPU e RAM individuais aparecem no header de cada pane —
-        sabe na hora qual processo está pesando.
+        <kbd className="kbd">M</kbd> maximiza e restaura sem perder nenhuma linha.
       </>
     ),
     bullets: [
-      'PTY sobrevive a re-layout (reattach + replay de 200KB buffer)',
-      'Drag-and-drop entre slots troca o conteúdo, não copia',
-      'Monitor CPU/RAM por pane (verde <30% · âmbar <70% · vermelho >70%)',
-      'Maximize preserva todas as outras panes vivas no background',
-      'Atalho rápido pra split: Ctrl+Shift+D · fechar pane: Ctrl+Shift+W'
+      'PTY sobrevive a re-layout · replay de 200 KB de buffer',
+      'Drag-and-drop entre slots troca conteúdo, não copia',
+      'Monitor CPU/RAM por pane (verde / âmbar / vermelho)',
+      'Ctrl+Shift+D split · Ctrl+Shift+W fecha pane'
     ],
     mockup: <SplitMockup />,
     side: 'L'
@@ -352,19 +345,14 @@ const CAPABILITIES: Capability[] = [
     title: <>Aperta. Fala. <em style={{ color: 'var(--color-accent)' }}>Vira texto</em> no terminal.</>,
     body: (
       <>
-        Botão de microfone na barra inferior. O áudio é gravado via{' '}
-        <span className="text-[color:var(--color-ink)]">MediaRecorder</span>{' '}
-        nativo do Chromium, enviado pro Groq Whisper Large v3 Turbo, e o texto
-        retorna direto no PTY ativo. Pra Claude/Gemini, isso é prompt
-        instantâneo — sem digitar muralha de 300 caracteres. Auto-stop em 60s
-        protege sua quota. Contador ao vivo no tooltip.
+        Grava, transcreve via Groq Whisper e joga o texto direto no PTY ativo.
+        Nada de digitar muralha de 300 chars — fala e manda.
       </>
     ),
     bullets: [
-      'Modelo: whisper-large-v3-turbo · ~25 req/min grátis',
-      'Idioma: auto-detect, PT-BR forçado ou EN-US forçado',
-      'Auto-Enter opcional (envia ↵ após transcrever)',
-      'Áudio nunca passa por servidor nosso · vai direto pra Groq',
+      'whisper-large-v3-turbo · ~25 req/min grátis',
+      'Auto-detect de idioma · PT-BR ou EN-US forçado',
+      'Auto-Enter opcional após transcrever',
       'API key salva no Windows Credential Manager'
     ],
     mockup: <VoiceMockup />,
@@ -376,24 +364,19 @@ const CAPABILITIES: Capability[] = [
     title: <>Seleciona o stack trace. IA <em style={{ color: 'var(--color-accent)' }}>diz o porquê</em> + manda o fix.</>,
     body: (
       <>
-        Highlight em qualquer texto da pane (stack trace, erro de TypeScript,
-        log feio), clica no botão{' '}
-        <span style={{ color: 'var(--color-accent)' }}>Explicar</span> ou no
-        item do menu de contexto. O texto vai pro Groq LLaMA 3.3 com prompt
-        estruturado e a resposta volta em formato fixo:{' '}
+        Seleciona o stack trace, clica{' '}
+        <span style={{ color: 'var(--color-accent)' }}>Explicar</span>.{' '}
+        Vem:{' '}
         <span className="text-[color:var(--color-ink)]">Diagnóstico</span> →{' '}
-        <span className="text-[color:var(--color-ink)]">Como resolver</span>{' '}
-        (passo-a-passo) →{' '}
-        <span className="text-[color:var(--color-ink)]">Comando</span>. O
-        comando vem com botão "Enviar pro terminal" — não precisa copy/paste.
+        <span className="text-[color:var(--color-ink)]">Como resolver</span> →{' '}
+        <span className="text-[color:var(--color-ink)]">Comando</span> — com botão pra injetar direto no PTY.
       </>
     ),
     bullets: [
-      'Modelo: llama-3.3-70b-versatile (mais rápido que GPT-4)',
-      'Resposta em PT-BR · formato Diagnóstico/Resolver/Comando',
-      'Botão "enviar pro terminal" injeta direto no PTY ativo',
-      'Texto truncado a 8k chars · resposta cap em 800 tokens',
-      'Se nada selecionado, pega as últimas 60 linhas visíveis automático'
+      'llama-3.3-70b · resposta em PT-BR',
+      'Formato fixo: Diagnóstico / Resolver / Comando',
+      '"Enviar pro terminal" injeta no PTY sem copy/paste',
+      'Sem seleção? Pega as últimas 60 linhas automático'
     ],
     mockup: <ExplainMockup />,
     side: 'L'
@@ -404,22 +387,15 @@ const CAPABILITIES: Capability[] = [
     title: <>Qualquer CLI vira um <em style={{ color: 'var(--color-accent)' }}>botão</em> na sua TopBar.</>,
     body: (
       <>
-        Aider, Cody, sgpt, Queen, llm, ollama-cli, ou qualquer binário no PATH.
-        Cria o provider uma vez (nome + comando shell + emoji + cor), aparece
-        como botão na TopBar pra sempre. Click = abre tab nova com o CLI já
-        rodando. Cada provider é validado contra padrões de injection antes
-        de ser persistido em{' '}
-        <code className="font-mono text-[color:var(--color-accent)]">~/.peu-term/custom-providers.json</code>
-        {' '}— bloqueia <em>rm -rf</em>, redirects pra <em>/dev/</em>,
-        <em>iex</em> + download, etc.
+        Nome + comando shell + emoji + cor — pronto. O provider vira botão na TopBar e
+        click abre tab com o CLI já rodando. Qualquer binário no PATH funciona.
       </>
     ),
     bullets: [
-      'Comando shell até 200 chars · sem caracteres de controle',
-      'Validação anti-injection no save (bloqueio de padrões shell perigosos)',
-      '16 emojis preset · 11 cores · ou cole o seu próprio',
-      'Click = nova tab Shell com autoSend do comando',
-      'Persistência via JSON local em ~/.peu-term/'
+      'Aider, Cody, sgpt, Queen, ollama-cli — qualquer um',
+      'Validação anti-injection no save',
+      '16 emojis · 11 cores · ou personalize',
+      'Persistência em ~/.peu-term/custom-providers.json'
     ],
     mockup: <ProvidersMockup />,
     side: 'R'

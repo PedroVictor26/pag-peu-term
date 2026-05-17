@@ -15,9 +15,8 @@ export function Manifesto() {
               </span>
               <hr className="editorial-rule-accent w-12" />
               <p className="font-mono text-[10px] leading-relaxed text-[color:var(--color-ink-dim)]">
-                Escrito em Maio 2026, depois de 4 meses tendo
-                Claude Code, Gemini CLI e Codex abertos ao mesmo
-                tempo no Windows.
+                Maio 2026 — 4 meses rodando Claude Code,
+                Gemini CLI e Codex ao mesmo tempo no Windows.
               </p>
             </div>
           </aside>
@@ -31,11 +30,9 @@ export function Manifesto() {
             <div className="grid grid-cols-1 gap-x-12 gap-y-6 text-[17px] leading-[1.65] text-[color:var(--color-ink-muted)] md:grid-cols-2 md:text-[18px]">
               <div className="space-y-5">
                 <p className="drop-cap" style={{ color: 'var(--color-ink)' }}>
-                  Cada CLI nova de IA virava mais uma janela de PowerShell. Em
-                  abril eu tinha quatro Claudes rodando ao mesmo tempo, um
-                  Gemini, dois <em className="text-[color:var(--color-ink)]">npm run dev</em>,
-                  três tmux improvisados via WSL — e umas 30 abas de browser
-                  entre as reuniões.
+                  Em abril eu tinha quatro Claudes rodando ao mesmo tempo, um
+                  Gemini, dois <em className="text-[color:var(--color-ink)]">npm run dev</em> — e umas
+                  30 abas de browser no meio.
                 </p>
                 <p>
                   Vi o{' '}
@@ -47,18 +44,13 @@ export function Manifesto() {
                   >
                     Dante Shell ↗
                   </a>
-                  , do Dante Testa, pra macOS. Peguei a referência e adaptei pro
-                  Windows com o que eu precisava no dia a dia.
+                  {' '}do Dante Testa (macOS) e adaptei pro Windows.
                 </p>
               </div>
               <div className="space-y-5">
                 <p>
-                  O resultado faz <span style={{ color: 'var(--color-ink)' }}>tudo isso num app só</span>:
-                  split de até 9 terminais, microfone que vira prompt pra IA,
-                  IA que explica seu erro de stack trace, editor de arquivos
-                  embutido, viewer de imagem/PDF, snippets reutilizáveis,
-                  favoritos com drag-and-drop e custom providers — pra plugar
-                  qualquer CLI (Aider, Cody, sgpt, Queen…) em 1 click.
+                  O resultado: <span style={{ color: 'var(--color-ink)' }}>tudo num app só</span> — split de até 9 terminais,
+                  voz que vira prompt, IA que explica erro, editor embutido e qualquer CLI em 1 click.
                 </p>
                 <p
                   className="border-l-2 pl-5 italic"

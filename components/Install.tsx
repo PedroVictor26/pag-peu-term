@@ -13,12 +13,11 @@ const STEPS: Step[] = [
     title: 'Você compra. Recebe o link.',
     body: (
       <>
-        Após o pagamento (Pix · Cartão · Boleto), você recebe automaticamente um
-        link pra baixar o instalador{' '}
+        Paga (Pix · Cartão · Boleto) → link do instalador{' '}
         <code className="font-mono text-[color:var(--color-accent)]">
           Peu-Term-Setup.exe
         </code>{' '}
-        (~4 MB). Salva em qualquer pasta.
+        (~4 MB) cai no seu e-mail.
       </>
     ),
     aside: <span className="font-mono text-xs text-[color:var(--color-ink-dim)]">~30s</span>
@@ -28,8 +27,7 @@ const STEPS: Step[] = [
     title: 'Windows reclama. Você passa por cima.',
     body: (
       <>
-        O instalador não é assinado digitalmente (cert custa caro pra dev indie
-        — vem em release próximo). O SmartScreen vai mostrar um aviso. Click em{' '}
+        SmartScreen avisa porque ainda não há assinatura digital (em breve). Click em{' '}
         <strong style={{ color: 'var(--color-ink)' }}>Mais informações</strong> →{' '}
         <strong style={{ color: 'var(--color-accent)' }}>Executar mesmo assim</strong>.
       </>
@@ -55,8 +53,7 @@ const STEPS: Step[] = [
     title: 'Pra usar voz/IA, gera 1 key na Groq.',
     body: (
       <>
-        A voz e o "explicar erro" usam Groq (free tier ~25 req/min, mais que
-        suficiente). Vai em{' '}
+        Gera uma key grátis em{' '}
         <a
           href="https://console.groq.com/keys"
           target="_blank"
@@ -65,11 +62,11 @@ const STEPS: Step[] = [
         >
           console.groq.com/keys ↗
         </a>{' '}
-        — cria conta grátis, gera uma API key, cola em{' '}
+        e cola em{' '}
         <strong style={{ color: 'var(--color-ink)' }}>
           Configurações → Voz → Terminal
         </strong>
-        . Key fica salva no Windows Credential Manager.
+        . A key fica no Windows Credential Manager.
       </>
     ),
     aside: <span className="font-mono text-xs text-[color:var(--color-ink-dim)]">opcional · ~1 min</span>
@@ -89,8 +86,7 @@ export function Install() {
           </div>
           <div className="col-span-12 mt-6 max-w-md md:col-span-8 md:col-start-5 md:mt-2 md:pt-3">
             <p className="text-[15px] leading-relaxed text-[color:var(--color-ink-muted)]">
-              Não tem download direto na landing (a gente vende, não regala).
-              Você compra, recebe o link, instala. Tudo em menos de 3 minutos.
+              Compra, recebe o link, instala. Menos de 3 minutos.
             </p>
           </div>
         </div>

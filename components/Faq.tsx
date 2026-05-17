@@ -10,9 +10,7 @@ const QAS: QA[] = [
     q: 'Preciso pagar pela Groq pra usar a voz?',
     a: (
       <>
-        Não. A Groq tem um free tier generoso (~25 requisições/min, 30s de áudio
-        por vez) — suficiente pra uso pessoal o dia inteiro. Você só paga se
-        quiser limites maiores ou usar comercialmente em produção.
+        Não. O free tier (~25 req/min, 30s por gravação) é suficiente pro uso pessoal o dia inteiro.
       </>
     )
   },
@@ -20,8 +18,7 @@ const QAS: QA[] = [
     q: 'Roda em qual Windows?',
     a: (
       <>
-        Windows 10 e 11, 64-bit. Não tem versão pra Mac, Linux ou ARM por
-        enquanto — está no roadmap.
+        Windows 10 e 11, 64-bit. Mac, Linux e ARM estão no roadmap.
       </>
     )
   },
@@ -29,11 +26,9 @@ const QAS: QA[] = [
     q: 'Funciona com WSL, PowerShell, CMD?',
     a: (
       <>
-        Funciona com qualquer shell instalado: PowerShell 5/7, CMD, Git Bash,
-        WSL (via{' '}
+        Sim — PowerShell 5/7, CMD, Git Bash, WSL (via{' '}
         <code className="font-mono text-[color:var(--color-accent)]">wsl.exe</code>
-        ), pwsh-core. O default é PowerShell — você pode trocar por projeto
-        via favorito.
+        ), pwsh-core. Troca o default por projeto via favorito.
       </>
     )
   },
@@ -41,14 +36,12 @@ const QAS: QA[] = [
     q: 'Posso usar com Claude Code, Gemini CLI e Codex que já tenho instalados?',
     a: (
       <>
-        Sim — os 4 botões da TopBar (Shell, Claude, Gemini, Codex) executam{' '}
-        <code className="font-mono text-[color:var(--color-accent)]">claude</code>
-        ,{' '}
+        Sim — a TopBar executa{' '}
+        <code className="font-mono text-[color:var(--color-accent)]">claude</code>,{' '}
         <code className="font-mono text-[color:var(--color-accent)]">gemini</code>{' '}
         e{' '}
         <code className="font-mono text-[color:var(--color-accent)]">codex</code>{' '}
-        no PATH. Se tiver outras CLIs (Aider, Cody, sgpt, Queen, sua own),
-        o botão "+" cria provider customizado em 1 click.
+        do PATH. Outras CLIs (Aider, Cody, sgpt…) viram provider em 1 click.
       </>
     )
   },
@@ -56,13 +49,10 @@ const QAS: QA[] = [
     q: 'Meus prompts e conversas saem do meu PC?',
     a: (
       <>
-        Não — exceto pelas chamadas explícitas à Groq (transcrição de voz e
-        explicar erro). Nem o app nem o instalador faz qualquer telemetria.
-        Tudo persiste local em{' '}
-        <code className="font-mono text-[color:var(--color-accent)]">
-          ~/.peu-term/
-        </code>{' '}
-        (JSON local); só a API key da Groq fica no Windows Credential Manager.
+        Não — zero telemetria. Só sai o que você manda à Groq (voz e explicar erro).
+        Tudo persiste em{' '}
+        <code className="font-mono text-[color:var(--color-accent)]">~/.peu-term/</code>{' '}
+        local; key no Windows Credential Manager.
       </>
     )
   },
@@ -70,9 +60,7 @@ const QAS: QA[] = [
     q: 'Tem auto-update?',
     a: (
       <>
-        Sim. A partir da v0.5.0 o Peu-Term se atualiza sozinho — checa por versão
-        nova ao abrir e, se houver, baixa e instala com o seu OK. Antes era aviso
-        manual pela comunidade.
+        Sim. Desde a v0.5.0: checa ao abrir, baixa e instala com o seu OK.
       </>
     )
   },
@@ -80,8 +68,7 @@ const QAS: QA[] = [
     q: 'Posso usar comercialmente / na minha empresa?',
     a: (
       <>
-        Sim. Cada licença vale por usuário. Pra times de 5+, fala comigo na
-        comunidade que a gente acerta valor empresarial.
+        Sim, por usuário. Times de 5+ fala na comunidade — acertamos valor empresarial.
       </>
     )
   },
@@ -89,10 +76,8 @@ const QAS: QA[] = [
     q: 'O .exe é seguro? SmartScreen reclamou.',
     a: (
       <>
-        Sim. SmartScreen avisa porque o instalador ainda não é assinado
-        digitalmente (cert custa caro pra dev indie). Quem testou já roda há
-        semanas sem incidente. Code signing entra na lista quando atingimos
-        volume mínimo.
+        Sim. O aviso é porque ainda não há assinatura digital — esperado em apps indie.
+        Code signing entra com volume mínimo atingido.
       </>
     )
   },
@@ -100,7 +85,7 @@ const QAS: QA[] = [
     q: 'É baseado no Dante Shell?',
     a: (
       <>
-        Sim — o{' '}
+        Sim —{' '}
         <a
           href="https://academy.dantetesta.com.br/"
           target="_blank"
@@ -109,9 +94,7 @@ const QAS: QA[] = [
         >
           Dante Shell ↗
         </a>{' '}
-        (Dante Testa, pra macOS) foi a referência inicial. Peguei o conceito e
-        adaptei pra Windows, com features próprias (Groq pra voz, custom
-        providers, editor embutido).
+        (macOS) foi a referência. Adaptei pra Windows com Groq, custom providers e editor embutido.
       </>
     )
   }
@@ -130,8 +113,7 @@ export function Faq() {
                 Antes que você <em style={{ color: 'var(--color-accent)' }}>pergunte</em>.
               </h2>
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-[color:var(--color-ink-muted)]">
-                Achou que faltou algo? Fala comigo direto no WhatsApp da
-                comunidade — respondo eu mesmo.
+                Faltou algo? Fala direto no WhatsApp — respondo eu mesmo.
               </p>
               <a
                 href="https://chat.whatsapp.com/BbcvuNrFM57JPBl9vDBE5q"

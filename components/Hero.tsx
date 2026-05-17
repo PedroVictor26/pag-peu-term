@@ -57,12 +57,11 @@ export function Hero() {
 
           {/* Sub editorial — não é "tagline corporativa" */}
           <p className="reveal reveal-3 mt-8 max-w-md text-base leading-relaxed text-[color:var(--color-ink-muted)] md:text-lg">
-            Um terminal pra Windows que entende quem trabalha com{' '}
+            Terminal pra Windows feito pra quem usa{' '}
             <span className="text-[color:var(--color-ink)]">Claude</span>,{' '}
             <span className="text-[color:var(--color-ink)]">Gemini</span>,{' '}
-            <span className="text-[color:var(--color-ink)]">Codex</span> e qualquer outro
-            CLI de IA. Split view, voz que vira texto, IA que explica erro. Sem
-            cloud, sem login, sem 8 ícones na bandeja.
+            <span className="text-[color:var(--color-ink)]">Codex</span>{' '}
+            — sem cloud, sem login, sem bagunça.
           </p>
 
           {/* CTAs */}

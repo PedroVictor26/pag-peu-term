@@ -26,8 +26,7 @@ export function Pricing() {
               Usa <em style={{ color: 'var(--color-accent)' }}>pra sempre</em>.
             </h2>
             <p className="mt-6 max-w-md text-[15px] leading-relaxed text-[color:var(--color-ink-muted)]">
-              Não tem mensalidade. Não tem trial de 7 dias. Você paga, recebe o
-              instalador, instala. Updates futuros já vêm dentro — mesmo na v1.0.
+              Sem trial. Sem mensalidade. Paga, instala, pronto — updates futuros já estão dentro.
             </p>
 
             {/* Pull quote */}
