@@ -15,10 +15,10 @@ const STEPS: Step[] = [
       <>
         Após o pagamento (Pix · Cartão · Boleto), você recebe automaticamente um
         link pra baixar o instalador{' '}
-        <code className="font-mono text-[color:var(--color-amber)]">
-          Peu-Term-Setup-X.X.X.exe
+        <code className="font-mono text-[color:var(--color-accent)]">
+          Peu-Term-Setup.exe
         </code>{' '}
-        (≈ 72 MB). Salva em qualquer pasta.
+        (~4 MB). Salva em qualquer pasta.
       </>
     ),
     aside: <span className="font-mono text-xs text-[color:var(--color-ink-dim)]">~30s</span>
@@ -31,17 +31,17 @@ const STEPS: Step[] = [
         O instalador não é assinado digitalmente (cert custa caro pra dev indie
         — vem em release próximo). O SmartScreen vai mostrar um aviso. Click em{' '}
         <strong style={{ color: 'var(--color-ink)' }}>Mais informações</strong> →{' '}
-        <strong style={{ color: 'var(--color-amber)' }}>Executar mesmo assim</strong>.
+        <strong style={{ color: 'var(--color-accent)' }}>Executar mesmo assim</strong>.
       </>
     ),
     aside: (
       <div
-        className="flex items-start gap-2 border-l border-[color:var(--color-amber)] bg-[color:var(--color-bg-paper)] p-3 text-[11px] leading-relaxed text-[color:var(--color-ink-muted)]"
+        className="flex items-start gap-2 border-l border-[color:var(--color-accent)] bg-[color:var(--color-bg-paper)] p-3 text-[11px] leading-relaxed text-[color:var(--color-ink-muted)]"
         style={{ borderLeftWidth: '2px' }}
       >
         <AlertTriangle
           className="mt-0.5 h-3 w-3 flex-shrink-0"
-          style={{ color: 'var(--color-amber)' }}
+          style={{ color: 'var(--color-accent)' }}
         />
         <span>
           Aviso esperado em apps de dev indie. Sem vírus — código aberto pra
@@ -69,7 +69,7 @@ const STEPS: Step[] = [
         <strong style={{ color: 'var(--color-ink)' }}>
           Configurações → Voz → Terminal
         </strong>
-        . Key fica cifrada localmente (DPAPI).
+        . Key fica salva no Windows Credential Manager.
       </>
     ),
     aside: <span className="font-mono text-xs text-[color:var(--color-ink-dim)]">opcional · ~1 min</span>
@@ -84,7 +84,7 @@ export function Install() {
           <div className="col-span-12 md:col-span-4">
             <span className="section-marker">№07 · Instalação</span>
             <h2 className="headline-section mt-4">
-              Como você <em style={{ color: 'var(--color-amber)' }}>recebe</em>.
+              Como você <em style={{ color: 'var(--color-accent)' }}>recebe</em>.
             </h2>
           </div>
           <div className="col-span-12 mt-6 max-w-md md:col-span-8 md:col-start-5 md:mt-2 md:pt-3">
@@ -106,7 +106,7 @@ export function Install() {
                 <span
                   className="font-display-italic text-5xl leading-none"
                   style={{
-                    color: 'var(--color-amber)',
+                    color: 'var(--color-accent)',
                     fontStyle: 'italic'
                   }}
                 >
@@ -132,16 +132,16 @@ export function Install() {
         </ol>
 
         {/* Bottom CTA */}
-        <div className="mt-16 flex flex-col items-start justify-between gap-4 border border-[color:var(--color-amber)] bg-[color:var(--color-bg-paper)] p-8 md:flex-row md:items-center">
+        <div className="mt-16 flex flex-col items-start justify-between gap-4 border border-[color:var(--color-accent)] bg-[color:var(--color-bg-paper)] p-8 md:flex-row md:items-center">
           <div>
             <h4 className="font-display-italic text-2xl" style={{ fontStyle: 'italic' }}>
               Pronto pra trocar 14 janelas por uma?
             </h4>
             <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.16em] text-[color:var(--color-ink-dim)]">
-              v0.3.4 · Windows 10/11 · 72 MB
+              v0.5.0 · Windows 10/11 · ~4 MB
             </p>
           </div>
-          <a href="#pricing" className="btn-prime amber-glow">
+          <a href="#pricing" className="btn-prime accent-glow">
             Adquirir agora
             <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.2} />
           </a>

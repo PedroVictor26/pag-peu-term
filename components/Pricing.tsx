@@ -2,7 +2,7 @@ import { Check } from 'lucide-react'
 
 const INCLUSO = [
   'Acesso vitalício à versão atual',
-  'Updates futuros — v0.4, v1.0, sem mensalidade',
+  'Updates automáticos — chegam sozinhos, sem mensalidade',
   'Comunidade WhatsApp direta comigo',
   'Custom AI providers ilimitados',
   'Voz pra IA (free tier Groq)',
@@ -23,7 +23,7 @@ export function Pricing() {
             <span className="section-marker">№06 · Preço</span>
             <h2 className="headline-section mt-4">
               Paga uma vez.<br />
-              Usa <em style={{ color: 'var(--color-amber)' }}>pra sempre</em>.
+              Usa <em style={{ color: 'var(--color-accent)' }}>pra sempre</em>.
             </h2>
             <p className="mt-6 max-w-md text-[15px] leading-relaxed text-[color:var(--color-ink-muted)]">
               Não tem mensalidade. Não tem trial de 7 dias. Você paga, recebe o
@@ -34,7 +34,7 @@ export function Pricing() {
             <blockquote
               className="mt-10 border-l-2 pl-5 font-display-italic text-2xl leading-snug"
               style={{
-                borderColor: 'var(--color-amber)',
+                borderColor: 'var(--color-accent)',
                 fontStyle: 'italic'
               }}
             >
@@ -49,10 +49,10 @@ export function Pricing() {
 
           {/* Direita — card de preço brutalista */}
           <div className="md:col-span-7">
-            <div className="relative border border-[color:var(--color-amber)] bg-[color:var(--color-bg-paper)]">
+            <div className="relative border border-[color:var(--color-accent)] bg-[color:var(--color-bg-paper)]">
               {/* Cabeçalho */}
               <div className="flex items-center justify-between border-b border-[color:var(--color-rule)] px-6 py-3">
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-amber)]">
+                <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-accent)]">
                   Licença individual
                 </span>
                 <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-dim)]">
@@ -77,7 +77,7 @@ export function Pricing() {
                     className="font-display leading-none"
                     style={{
                       fontSize: 'clamp(5.5rem, 14vw, 10rem)',
-                      color: 'var(--color-amber)',
+                      color: 'var(--color-accent)',
                       fontStyle: 'italic'
                     }}
                   >
@@ -100,7 +100,7 @@ export function Pricing() {
                   href="https://academy.dantetesta.com.br/download/peu-term-windows"
                   target="_blank"
                   rel="noopener"
-                  className="group flex w-full items-center justify-between gap-3 border border-[color:var(--color-amber)] bg-[color:var(--color-amber)] px-6 py-4 text-[color:var(--color-bg)] transition hover:bg-[color:var(--color-amber-bright)]"
+                  className="group flex w-full items-center justify-between gap-3 border border-[color:var(--color-accent)] bg-[color:var(--color-accent)] px-6 py-4 text-[color:var(--color-bg)] transition hover:bg-[color:var(--color-accent-bright)]"
                 >
                   <span className="font-mono text-xs font-medium uppercase tracking-[0.18em]">
                     Comprar na Academy ↗
@@ -122,7 +122,7 @@ export function Pricing() {
                     >
                       <Check
                         className="mt-1 h-3 w-3 flex-shrink-0"
-                        style={{ color: 'var(--color-amber)' }}
+                        style={{ color: 'var(--color-accent)' }}
                         strokeWidth={2.5}
                       />
                       <span>{it}</span>

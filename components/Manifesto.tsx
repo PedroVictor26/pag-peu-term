@@ -10,10 +10,10 @@ export function Manifesto() {
           <aside className="col-span-12 mb-10 md:col-span-3 md:mb-0">
             <div className="sticky top-10 flex flex-col gap-3">
               <span className="section-marker">№02 · Manifesto</span>
-              <span className="eyebrow text-[color:var(--color-amber)]">
+              <span className="eyebrow text-[color:var(--color-accent)]">
                 Por que isso existe
               </span>
-              <hr className="editorial-rule-amber w-12" />
+              <hr className="editorial-rule-accent w-12" />
               <p className="font-mono text-[10px] leading-relaxed text-[color:var(--color-ink-dim)]">
                 Escrito em Maio 2026, depois de 4 meses tendo
                 Claude Code, Gemini CLI e Codex abertos ao mesmo
@@ -25,7 +25,7 @@ export function Manifesto() {
           {/* Main editorial copy */}
           <div className="col-span-12 md:col-span-9 md:col-start-4">
             <h2 className="headline-section mb-12">
-              Eu queria um terminal que <span style={{ color: 'var(--color-amber)' }}>entendesse</span> que eu uso IA o dia inteiro.
+              Eu queria um terminal que <span style={{ color: 'var(--color-accent)' }}>entendesse</span> que eu uso IA o dia inteiro.
             </h2>
 
             <div className="grid grid-cols-1 gap-x-12 gap-y-6 text-[17px] leading-[1.65] text-[color:var(--color-ink-muted)] md:grid-cols-2 md:text-[18px]">
@@ -63,11 +63,11 @@ export function Manifesto() {
                 <p
                   className="border-l-2 pl-5 italic"
                   style={{
-                    borderColor: 'var(--color-amber)',
+                    borderColor: 'var(--color-accent)',
                     color: 'var(--color-ink)'
                   }}
                 >
-                  Pra Windows não existia. Agora existe. <span className="font-mono not-italic">v0.3.4</span>, e crescendo.
+                  Pra Windows não existia. Agora existe. <span className="font-mono not-italic">v0.5.0</span>, e crescendo.
                 </p>
                 <p className="pt-2 font-display-italic text-2xl leading-tight" style={{ color: 'var(--color-ink)' }}>
                   — Pedro V.
@@ -94,7 +94,7 @@ function PullStat({ n, label }: { n: string; label: string }) {
     <div className="flex flex-col gap-2">
       <span
         className="font-display-italic text-5xl leading-none md:text-6xl"
-        style={{ color: 'var(--color-amber)', fontStyle: 'italic' }}
+        style={{ color: 'var(--color-accent)', fontStyle: 'italic' }}
       >
         {n}
       </span>

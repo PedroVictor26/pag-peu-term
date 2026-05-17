@@ -6,7 +6,8 @@ import {
   Tags,
   MousePointerClick,
   Save,
-  Eye
+  Eye,
+  Boxes
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
@@ -25,11 +26,11 @@ const EXTRAS: Extra[] = [
       <>
         Duplo click em qualquer arquivo do tree de pastas e ele abre num editor
         de texto interno. <strong style={{ color: 'var(--color-ink)' }}>Ctrl+S</strong> salva.
-        Suporta ~60 extensões — de <code className="font-mono text-[color:var(--color-amber)]">.js</code>
-        {' '}/{' '}<code className="font-mono text-[color:var(--color-amber)]">.tsx</code> a
-        {' '}<code className="font-mono text-[color:var(--color-amber)]">.cob</code>,{' '}
-        <code className="font-mono text-[color:var(--color-amber)]">.toml</code>,{' '}
-        <code className="font-mono text-[color:var(--color-amber)]">.svg</code>. Diff de save
+        Suporta ~60 extensões — de <code className="font-mono text-[color:var(--color-accent)]">.js</code>
+        {' '}/{' '}<code className="font-mono text-[color:var(--color-accent)]">.tsx</code> a
+        {' '}<code className="font-mono text-[color:var(--color-accent)]">.cob</code>,{' '}
+        <code className="font-mono text-[color:var(--color-accent)]">.toml</code>,{' '}
+        <code className="font-mono text-[color:var(--color-accent)]">.svg</code>. Diff de save
         com warning antes de perder mudanças.
       </>
     ),
@@ -58,7 +59,7 @@ const EXTRAS: Extra[] = [
         que você marca) e{' '}
         <strong style={{ color: 'var(--color-ink)' }}>Pastas</strong> (tree
         expandable das drives do Windows). Arrasta uma pasta pra qualquer pane
-        e ela faz <code className="font-mono text-[color:var(--color-amber)]">cd</code> instantâneo.
+        e ela faz <code className="font-mono text-[color:var(--color-accent)]">cd</code> instantâneo.
         Click no favorito = nova tab no diretório.
       </>
     ),
@@ -72,7 +73,7 @@ const EXTRAS: Extra[] = [
         Salva comandos longos com nome, emoji e cor — aparecem na sidebar
         embaixo. Click manda direto pro PTY ativo. Modo{' '}
         <strong style={{ color: 'var(--color-ink)' }}>auto-run</strong> envia
-        já com Enter (cuidado pra <code className="font-mono text-[color:var(--color-amber)]">rm</code>{' '}
+        já com Enter (cuidado pra <code className="font-mono text-[color:var(--color-accent)]">rm</code>{' '}
         — app pede confirmação se detectar padrão destrutivo).
       </>
     ),
@@ -99,11 +100,31 @@ const EXTRAS: Extra[] = [
       <>
         Fecha o app, abre de novo — tudo volta como estava: tabs abertas,
         split layout, providers customizados, projetos favoritos, scrollback
-        configurado, tema escolhido. Persistência cifrada localmente, com toast
-        de erro persistente se 3 saves falharem em sequência.
+        configurado, tema escolhido. Persistência em <strong style={{ color: 'var(--color-ink)' }}>JSON local</strong> em{' '}
+        <code className="font-mono text-[color:var(--color-accent)]">~/.peu-term/</code>,
+        com toast de erro persistente se 3 saves falharem em sequência.
       </>
     ),
     tech: ['Auto-save debounced 500ms', 'Bounds da janela preservados', 'Fallback safe se JSON corrompido']
+  },
+  {
+    icon: Boxes,
+    title: <>MCP isolado<br />por projeto</>,
+    desc: (
+      <>
+        Cada projeto tem seus próprios servidores{' '}
+        <strong style={{ color: 'var(--color-ink)' }}>MCP</strong> — gravados no{' '}
+        <code className="font-mono text-[color:var(--color-accent)]">.mcp.json</code>{' '}
+        da pasta do projeto. Existe também uma camada{' '}
+        <strong style={{ color: 'var(--color-ink)' }}>Global</strong> pra MCPs que
+        valem em todos os projetos (ferramentas de uso geral, sem poluir cada repo).
+        O painel de MCP segue automaticamente o projeto da aba ativa — você abre a
+        aba do <code className="font-mono text-[color:var(--color-accent)]">projeto-a</code>,
+        vê os MCPs do <code className="font-mono text-[color:var(--color-accent)]">projeto-a</code>.
+        Na hora de subir o terminal, os escopos Global e Projeto são mesclados no spawn.
+      </>
+    ),
+    tech: ['Escopo Projeto + Global', 'Painel segue a aba ativa', 'Mescla no spawn do terminal']
   }
 ]
 
@@ -115,7 +136,7 @@ export function Extras() {
           <div className="col-span-12 md:col-span-4">
             <span className="section-marker">№04 · Extras</span>
             <h2 className="headline-section mt-4 max-w-md">
-              E mais <em style={{ color: 'var(--color-amber)' }}>seis coisas</em> que ninguém te conta.
+              E mais <em style={{ color: 'var(--color-accent)' }}>sete coisas</em> que ninguém te conta.
             </h2>
           </div>
           <div className="col-span-12 mt-6 md:col-span-7 md:col-start-6 md:mt-3 md:pt-4">
@@ -150,15 +171,15 @@ function ExtraItem({ extra, index }: { extra: Extra; index: number }) {
             fontVariantNumeric: 'tabular-nums'
           }}
         >
-          {String(index + 1).padStart(2, '0')} / 06
+          {String(index + 1).padStart(2, '0')} / 07
         </span>
         <span
-          className="flex h-9 w-9 items-center justify-center border border-[color:var(--color-rule-strong)] transition group-hover:border-[color:var(--color-amber)] group-hover:bg-[color:var(--color-amber)]"
+          className="flex h-9 w-9 items-center justify-center border border-[color:var(--color-rule-strong)] transition group-hover:border-[color:var(--color-accent)] group-hover:bg-[color:var(--color-accent)]"
           aria-hidden
         >
           <Icon
             className="h-4 w-4 transition group-hover:text-[color:var(--color-bg)]"
-            style={{ color: 'var(--color-amber)' }}
+            style={{ color: 'var(--color-accent)' }}
             strokeWidth={1.6}
           />
         </span>
@@ -184,7 +205,7 @@ function ExtraItem({ extra, index }: { extra: Extra; index: number }) {
             key={i}
             className="flex gap-2 font-mono text-[10px] uppercase tracking-[0.05em] text-[color:var(--color-ink-dim)]"
           >
-            <span className="text-[color:var(--color-amber)]">·</span>
+            <span className="text-[color:var(--color-accent)]">·</span>
             <span>{t}</span>
           </li>
         ))}

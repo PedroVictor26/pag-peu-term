@@ -25,9 +25,9 @@ export function Hero() {
         </nav>
         <a
           href="#pricing"
-          className="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-amber)]"
+          className="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-accent)]"
         >
-          v0.3.4 →
+          v0.5.0 →
         </a>
       </header>
 
@@ -37,7 +37,7 @@ export function Hero() {
         <div className="relative flex flex-col justify-center">
           {/* Marker tipo magazine */}
           <div className="reveal reveal-1 mb-6 flex items-center gap-4 text-[10px]">
-            <span className="font-mono uppercase tracking-[0.18em] text-[color:var(--color-amber)]">
+            <span className="font-mono uppercase tracking-[0.18em] text-[color:var(--color-accent)]">
               Issue №01
             </span>
             <span className="h-px w-12 bg-[color:var(--color-rule-strong)]" />
@@ -52,7 +52,7 @@ export function Hero() {
             <span className="block">
               ter <em className="not-italic" style={{ fontStyle: 'normal', fontFamily: 'var(--font-sans)', fontWeight: 300, letterSpacing: '-0.04em' }}>14</em> janelas
             </span>
-            <span className="block text-[color:var(--color-amber)]">— fiz isso.</span>
+            <span className="block text-[color:var(--color-accent)]">— fiz isso.</span>
           </h1>
 
           {/* Sub editorial — não é "tagline corporativa" */}
@@ -67,7 +67,7 @@ export function Hero() {
 
           {/* CTAs */}
           <div className="reveal reveal-4 mt-10 flex flex-wrap items-center gap-3">
-            <a href="#pricing" className="btn-prime amber-glow">
+            <a href="#pricing" className="btn-prime accent-glow">
               <span>Adquirir · R$ 25</span>
               <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.2} />
             </a>
@@ -83,7 +83,7 @@ export function Hero() {
 
           {/* Trust line — datapoints em mono, não "trusted by N developers" */}
           <dl className="reveal reveal-5 mt-14 grid grid-cols-3 gap-x-4 border-t border-[color:var(--color-rule)] pt-6 text-xs">
-            <Datapoint label="Tamanho" value="72 MB" />
+            <Datapoint label="Tamanho" value="~4 MB" />
             <Datapoint label="Panes / tab" value="até 9" />
             <Datapoint label="Telemetria" value="zero" />
           </dl>

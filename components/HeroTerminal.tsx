@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 
 /**
  * Terminal "vivo" do hero — digita comandos um após o outro em loop
- * pra simular fluxo real. Cor amber/cream (não verde Matrix clichê).
+ * pra simular fluxo real. Cor accent/fuchsia no prompt e destaques.
  *
  * NÃO é screenshot. É HTML/CSS — performance ótima, animado.
  */
@@ -45,13 +45,13 @@ const SCENES: Scene[] = [
 export function HeroTerminal() {
   return (
     <div className="relative w-full max-w-[560px]">
-      {/* Sombra ambient amber */}
+      {/* Sombra ambient accent */}
       <div
         aria-hidden
         className="pointer-events-none absolute -inset-x-10 -bottom-20 -top-10 opacity-60"
         style={{
           background:
-            'radial-gradient(ellipse at center, var(--color-amber-glow) 0%, transparent 60%)',
+            'radial-gradient(ellipse at center, var(--color-accent-glow) 0%, transparent 60%)',
           filter: 'blur(48px)'
         }}
       />
@@ -60,7 +60,7 @@ export function HeroTerminal() {
         className="relative overflow-hidden border border-[color:var(--color-rule-strong)] bg-[color:var(--color-bg-paper)]"
         style={{
           boxShadow:
-            '0 24px 80px -20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(244, 237, 225, 0.04) inset'
+            '0 24px 80px -20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(139, 166, 214, 0.04) inset'
         }}
       >
         {/* Title bar */}
@@ -71,7 +71,7 @@ export function HeroTerminal() {
             <span className="h-2.5 w-2.5 rounded-full bg-[color:var(--color-ink-quiet)]" />
           </div>
           <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-dim)]">
-            <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--color-amber)]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--color-accent)]" />
             <span>peu-term · shell · 1</span>
           </div>
           <span className="font-mono text-[10px] text-[color:var(--color-ink-dim)]">
@@ -81,7 +81,7 @@ export function HeroTerminal() {
 
         {/* Buffer area */}
         <div className="relative h-[340px] overflow-hidden px-5 py-4 font-mono text-[13px] leading-[1.55] text-[color:var(--color-ink)]">
-          {/* Scanline sutil pra dar feel de CRT */}
+          {/* Scanline sutil pra dar feel de terminal */}
           <div className="scanline" />
 
           <TypingLoop />
@@ -95,7 +95,7 @@ export function HeroTerminal() {
             <span>UTF-8</span>
           </div>
           <div className="flex items-center gap-3">
-            <span style={{ color: 'var(--color-amber)' }}>● rec 12s</span>
+            <span style={{ color: 'var(--color-accent)' }}>● rec 12s</span>
             <span>·</span>
             <span>2×2</span>
           </div>
@@ -163,7 +163,7 @@ function TypingLoop() {
       <div className="mt-5 space-y-1.5">
         <div className="flex items-baseline gap-2">
           <span
-            className="text-[color:var(--color-amber)]"
+            className="text-[color:var(--color-accent)]"
             style={{ fontVariantNumeric: 'tabular-nums' }}
           >
             {scene.prompt}
@@ -181,7 +181,7 @@ function TypingLoop() {
                 key={`${sceneIdx}-${i}`}
                 style={{
                   color: isSuccess
-                    ? 'var(--color-amber-bright)'
+                    ? 'var(--color-accent-bright)'
                     : isMuted
                       ? 'var(--color-ink-dim)'
                       : 'var(--color-ink-muted)'
@@ -199,7 +199,7 @@ function TypingLoop() {
 function Line({ prompt, cmd }: { prompt: string; cmd: string }) {
   return (
     <div className="flex items-baseline gap-2">
-      <span className="text-[color:var(--color-amber)]">{prompt}</span>
+      <span className="text-[color:var(--color-accent)]">{prompt}</span>
       <span>{cmd}</span>
     </div>
   )

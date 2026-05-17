@@ -53,7 +53,7 @@ const TECH: SpecGroup[] = [
     title: 'Plataforma',
     rows: [
       { label: 'Sistema', value: 'Windows 10 · 11 · 64-bit' },
-      { label: 'Tamanho do instalador', value: '~72 MB' },
+      { label: 'Tamanho do instalador', value: '~4 MB' },
       { label: 'Tipo', value: 'NSIS · install per-user' },
       { label: 'Assinatura', value: <span className="text-[color:var(--color-ink-dim)]">— ainda não</span> }
     ]
@@ -61,10 +61,10 @@ const TECH: SpecGroup[] = [
   {
     title: 'Stack interno',
     rows: [
-      { label: 'Runtime', value: 'Electron 33 · winpty' },
+      { label: 'Runtime', value: 'Tauri 2 · Rust · WebView2' },
       { label: 'Shells suportados', value: 'pwsh · powershell · cmd · bash · wsl' },
       { label: 'Fonte', value: 'Cascadia · Geist Mono · JetBrains Mono · Fira Code' },
-      { label: 'Persistência', value: '~/.peu-term/ · JSON cifrado (DPAPI)' }
+      { label: 'Persistência', value: '~/.peu-term/ · JSON local' }
     ]
   },
   {
@@ -90,11 +90,11 @@ export function Specs() {
         <div className="mb-12 grid grid-cols-12 gap-x-6">
           <div className="col-span-12 md:col-span-3">
             <span className="section-marker">№05 · Datasheet</span>
-            <hr className="editorial-rule-amber mt-3 w-12" />
+            <hr className="editorial-rule-accent mt-3 w-12" />
           </div>
           <div className="col-span-12 mt-6 md:col-span-9 md:mt-0">
             <h2 className="headline-section max-w-3xl">
-              Especificações <em style={{ color: 'var(--color-amber)' }}>completas</em>.
+              Especificações <em style={{ color: 'var(--color-accent)' }}>completas</em>.
             </h2>
             <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-[color:var(--color-ink-muted)]">
               Lista densa. Mono. Sem floreio. É pra você
@@ -128,7 +128,7 @@ export function Specs() {
                 Tech specs
               </h3>
               <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-dim)]">
-                v0.3.4
+                v0.5.0
               </span>
             </div>
             <div className="space-y-10">
@@ -139,8 +139,8 @@ export function Specs() {
 
             {/* Privacidade bloco */}
             <div className="mt-12 border border-[color:var(--color-rule-strong)] bg-[color:var(--color-bg-paper)] p-5">
-              <div className="mb-3 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-amber)]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--color-amber)]" />
+              <div className="mb-3 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-accent)]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--color-accent)]" />
                 Privacidade
               </div>
               <p className="font-display-italic text-xl leading-snug" style={{ fontStyle: 'italic' }}>
@@ -148,9 +148,9 @@ export function Specs() {
                 pra Groq — explicitamente, com seu próprio API key."
               </p>
               <ul className="mt-5 space-y-1.5 border-t border-[color:var(--color-rule)] pt-4 font-mono text-[11px] leading-relaxed text-[color:var(--color-ink-muted)]">
-                <li>— API key cifrada via DPAPI Windows</li>
+                <li>— API key da Groq no Windows Credential Manager</li>
                 <li>— Sem cloud sync · sem login · sem analytics</li>
-                <li>— Sem auto-update silencioso (você decide)</li>
+                <li>— Auto-update com confirmação — você decide quando instalar</li>
                 <li>— Áudio do mic → Groq direto, nunca passa por nós</li>
               </ul>
             </div>
@@ -164,7 +164,7 @@ export function Specs() {
 function SpecBlock({ group }: { group: SpecGroup }) {
   return (
     <div>
-      <h4 className="mb-3 font-mono text-[10px] uppercase tracking-[0.22em] text-[color:var(--color-amber)]">
+      <h4 className="mb-3 font-mono text-[10px] uppercase tracking-[0.22em] text-[color:var(--color-accent)]">
         {group.title}
       </h4>
       <dl className="divide-y divide-[color:var(--color-rule)] border-y border-[color:var(--color-rule)]">

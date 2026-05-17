@@ -21,7 +21,7 @@ const QAS: QA[] = [
     a: (
       <>
         Windows 10 e 11, 64-bit. Não tem versão pra Mac, Linux ou ARM por
-        enquanto — está no roadmap pra v0.5+.
+        enquanto — está no roadmap.
       </>
     )
   },
@@ -31,7 +31,7 @@ const QAS: QA[] = [
       <>
         Funciona com qualquer shell instalado: PowerShell 5/7, CMD, Git Bash,
         WSL (via{' '}
-        <code className="font-mono text-[color:var(--color-amber)]">wsl.exe</code>
+        <code className="font-mono text-[color:var(--color-accent)]">wsl.exe</code>
         ), pwsh-core. O default é PowerShell — você pode trocar por projeto
         via favorito.
       </>
@@ -42,11 +42,11 @@ const QAS: QA[] = [
     a: (
       <>
         Sim — os 4 botões da TopBar (Shell, Claude, Gemini, Codex) executam{' '}
-        <code className="font-mono text-[color:var(--color-amber)]">claude</code>
+        <code className="font-mono text-[color:var(--color-accent)]">claude</code>
         ,{' '}
-        <code className="font-mono text-[color:var(--color-amber)]">gemini</code>{' '}
+        <code className="font-mono text-[color:var(--color-accent)]">gemini</code>{' '}
         e{' '}
-        <code className="font-mono text-[color:var(--color-amber)]">codex</code>{' '}
+        <code className="font-mono text-[color:var(--color-accent)]">codex</code>{' '}
         no PATH. Se tiver outras CLIs (Aider, Cody, sgpt, Queen, sua own),
         o botão "+" cria provider customizado em 1 click.
       </>
@@ -59,10 +59,10 @@ const QAS: QA[] = [
         Não — exceto pelas chamadas explícitas à Groq (transcrição de voz e
         explicar erro). Nem o app nem o instalador faz qualquer telemetria.
         Tudo persiste local em{' '}
-        <code className="font-mono text-[color:var(--color-amber)]">
+        <code className="font-mono text-[color:var(--color-accent)]">
           ~/.peu-term/
-        </code>
-        , API key cifrada via DPAPI.
+        </code>{' '}
+        (JSON local); só a API key da Groq fica no Windows Credential Manager.
       </>
     )
   },
@@ -70,8 +70,9 @@ const QAS: QA[] = [
     q: 'Tem auto-update?',
     a: (
       <>
-        Ainda não — versões novas avisamos via grupo da comunidade. Auto-update
-        real (OTA) está planejado pra v0.4.
+        Sim. A partir da v0.5.0 o Peu-Term se atualiza sozinho — checa por versão
+        nova ao abrir e, se houver, baixa e instala com o seu OK. Antes era aviso
+        manual pela comunidade.
       </>
     )
   },
@@ -126,7 +127,7 @@ export function Faq() {
             <div className="sticky top-10 flex flex-col gap-3">
               <span className="section-marker">№08 · Q&amp;A</span>
               <h2 className="headline-section">
-                Antes que você <em style={{ color: 'var(--color-amber)' }}>pergunte</em>.
+                Antes que você <em style={{ color: 'var(--color-accent)' }}>pergunte</em>.
               </h2>
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-[color:var(--color-ink-muted)]">
                 Achou que faltou algo? Fala comigo direto no WhatsApp da
@@ -153,7 +154,7 @@ export function Faq() {
                 >
                   <div className="col-span-1">
                     <span
-                      className="font-mono text-[11px] text-[color:var(--color-amber)]"
+                      className="font-mono text-[11px] text-[color:var(--color-accent)]"
                       style={{ fontVariantNumeric: 'tabular-nums' }}
                     >
                       Q{String(i + 1).padStart(2, '0')}
@@ -167,7 +168,7 @@ export function Faq() {
                       {qa.q}
                     </h3>
                     <p className="mt-3 max-w-prose text-[15px] leading-relaxed text-[color:var(--color-ink-muted)]">
-                      <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-amber)] mr-2">
+                      <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-accent)] mr-2">
                         R.
                       </span>
                       {qa.a}

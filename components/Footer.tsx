@@ -48,7 +48,7 @@ export function Footer() {
 
         {/* Crédito de inspiração — curto */}
         <p className="mt-6 border-t border-[color:var(--color-rule)] pt-5 text-[12px] leading-relaxed text-[color:var(--color-ink-muted)]">
-          <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-amber)]">
+          <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-accent)]">
             Inspiração
           </span>
           <span className="ml-3">
@@ -68,11 +68,11 @@ export function Footer() {
         {/* Bottom row: meta info */}
         <div className="mt-8 flex flex-col items-start justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-dim)] md:flex-row md:items-center">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-            <span>v0.3.4</span>
+            <span>v0.5.0</span>
             <span>◊</span>
             <span>Windows 10/11 · x64</span>
             <span>◊</span>
-            <span>~72 MB</span>
+            <span>~4 MB</span>
             <span>◊</span>
             <span>Built in Brasil · 2026</span>
           </div>
@@ -84,7 +84,7 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Big amber wordmark — caché editorial no fim */}
+      {/* Big accent wordmark — caché editorial no fim */}
       <div
         aria-hidden
         className="overflow-hidden border-t border-[color:var(--color-rule)] pb-1 pt-3"
@@ -125,7 +125,7 @@ function FooterCol({
               href={it.href}
               target={it.external ? '_blank' : undefined}
               rel={it.external ? 'noopener' : undefined}
-              className="text-sm text-[color:var(--color-ink)] transition hover:text-[color:var(--color-amber)]"
+              className="text-sm text-[color:var(--color-ink)] transition hover:text-[color:var(--color-accent)]"
             >
               {it.label}
             </a>
