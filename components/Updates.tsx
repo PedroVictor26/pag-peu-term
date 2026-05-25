@@ -5,7 +5,6 @@ import {
   Search,
   Send,
   FileSymlink,
-  Image,
   BarChart2
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
@@ -49,11 +48,6 @@ const UPDATES: Update[] = [
     icon: FileSymlink,
     title: 'Caminhos clicáveis',
     desc: 'Arquivos e caminhos na saída do terminal viram links — click abre no editor embutido.'
-  },
-  {
-    icon: Image,
-    title: 'Imagem de fundo',
-    desc: 'Personalize o fundo do terminal com qualquer imagem. Opacidade ajustável.'
   },
   {
     icon: BarChart2,
