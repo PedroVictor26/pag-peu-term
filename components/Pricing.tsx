@@ -99,7 +99,7 @@ export function Pricing() {
               {/* CTA */}
               <div className="border-y border-[color:var(--color-rule)] px-6 py-5">
                 <a
-                  href="https://academy.dantetesta.com.br/"
+                  href="https://academy.dantetesta.com.br/download/peu-term-windows"
                   target="_blank"
                   rel="noopener"
                   className="group flex w-full items-center justify-between gap-3 border border-[color:var(--color-accent)] bg-[color:var(--color-accent)] px-6 py-4 text-[color:var(--color-bg)] transition hover:bg-[color:var(--color-accent-bright)]"

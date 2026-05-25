@@ -20,7 +20,7 @@ export function Hero() {
             Specs
           </a>
           <a
-            href="https://academy.dantetesta.com.br/"
+            href="https://academy.dantetesta.com.br/download/peu-term-windows"
             target="_blank"
             rel="noopener"
             className="link-sweep"
@@ -73,7 +73,7 @@ export function Hero() {
           {/* CTAs */}
           <div className="reveal reveal-4 mt-10 flex flex-wrap items-center gap-3">
             <a
-              href="https://academy.dantetesta.com.br/"
+              href="https://academy.dantetesta.com.br/download/peu-term-windows"
               target="_blank"
               rel="noopener"
               className="btn-prime accent-glow"
