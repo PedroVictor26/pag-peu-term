@@ -112,7 +112,7 @@ export function Extras() {
       <div className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
         <div className="mb-16 grid grid-cols-12 gap-x-6">
           <div className="col-span-12 md:col-span-4">
-            <span className="section-marker">№04 · Extras</span>
+            <span className="section-marker">№05 · Extras</span>
             <h2 className="headline-section mt-4 max-w-md">
               E mais <em style={{ color: 'var(--color-accent)' }}>sete coisas</em> que ninguém te conta.
             </h2>

@@ -41,9 +41,16 @@ const SHORTCUTS: SpecGroup[] = [
   {
     title: 'Editor + arquivos',
     rows: [
+      { label: 'Fuzzy finder', value: <KbdRow keys={['Ctrl', 'Shift', 'P']} /> },
       { label: 'Abrir arquivo', value: <KbdRow keys={['Ctrl', 'O']} /> },
       { label: 'Salvar', value: <KbdRow keys={['Ctrl', 'S']} /> },
       { label: 'Fechar modal', value: <KbdRow keys={['Esc']} /> }
+    ]
+  },
+  {
+    title: 'Seleção + CLI',
+    rows: [
+      { label: 'Enviar seleção pro CLI', value: <KbdRow keys={['Ctrl', 'Shift', 'E']} /> }
     ]
   }
 ]
@@ -70,12 +77,16 @@ const TECH: SpecGroup[] = [
   {
     title: 'Extras silenciosos',
     rows: [
+      { label: 'SSH / VPS', value: 'Perfis · reconexão auto · ping status' },
+      { label: 'Navegador embutido', value: 'Barra de endereço · histórico local' },
+      { label: 'Biblioteca de prompts', value: 'Salvar + injetar no CLI ativo' },
       { label: 'Editor', value: 'Texto + imagem + PDF · ~60 extensões' },
       { label: 'Snippets', value: 'Drag-reorder · emoji · auto-run' },
       { label: 'Favoritos', value: 'Sidebar · arrasta pasta = cd na pane' },
       { label: 'Sessão', value: 'Tabs + layout + cores restaurados no boot' },
       { label: 'Scrollback', value: 'Até 100k linhas configurável' },
-      { label: 'Monitor', value: 'CPU + RAM por pane (verde/âmbar/vermelho)' }
+      { label: 'Monitor', value: 'CPU + RAM por pane (verde/âmbar/vermelho)' },
+      { label: 'Barra de status', value: 'Projeto · branch · hora · ping SSH' }
     ]
   }
 ]
@@ -89,7 +100,7 @@ export function Specs() {
       <div className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
         <div className="mb-12 grid grid-cols-12 gap-x-6">
           <div className="col-span-12 md:col-span-3">
-            <span className="section-marker">№05 · Datasheet</span>
+            <span className="section-marker">№06 · Datasheet</span>
             <hr className="editorial-rule-accent mt-3 w-12" />
           </div>
           <div className="col-span-12 mt-6 md:col-span-9 md:mt-0">
@@ -110,7 +121,7 @@ export function Specs() {
                 Atalhos de teclado
               </h3>
               <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-dim)]">
-                17 combos
+                19 combos
               </span>
             </div>
             <div className="space-y-10">
@@ -127,7 +138,7 @@ export function Specs() {
                 Tech specs
               </h3>
               <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-dim)]">
-                v0.5.0
+                v0.8.0
               </span>
             </div>
             <div className="space-y-10">

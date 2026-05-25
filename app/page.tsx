@@ -1,4 +1,5 @@
 import { Hero } from '@/components/Hero'
+import { Updates } from '@/components/Updates'
 import { Manifesto } from '@/components/Manifesto'
 import { Capabilities } from '@/components/Capabilities'
 import { Extras } from '@/components/Extras'
@@ -12,6 +13,7 @@ export default function HomePage() {
   return (
     <main className="grain relative isolate">
       <Hero />
+      <Updates />
       <Manifesto />
       <Capabilities />
       <Extras />

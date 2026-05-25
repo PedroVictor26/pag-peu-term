@@ -9,7 +9,7 @@ export function Manifesto() {
           {/* Side annotation */}
           <aside className="col-span-12 mb-10 md:col-span-3 md:mb-0">
             <div className="sticky top-10 flex flex-col gap-3">
-              <span className="section-marker">№02 · Manifesto</span>
+              <span className="section-marker">№03 · Manifesto</span>
               <span className="eyebrow text-[color:var(--color-accent)]">
                 Por que isso existe
               </span>
@@ -59,7 +59,7 @@ export function Manifesto() {
                     color: 'var(--color-ink)'
                   }}
                 >
-                  Pra Windows não existia. Agora existe. <span className="font-mono not-italic">v0.5.0</span>, e crescendo.
+                  Pra Windows não existia. Agora existe. <span className="font-mono not-italic">v0.8.0</span> — SSH, navegador embutido, fuzzy finder e mais.
                 </p>
                 <p className="pt-2 font-display-italic text-2xl leading-tight" style={{ color: 'var(--color-ink)' }}>
                   — Pedro V.

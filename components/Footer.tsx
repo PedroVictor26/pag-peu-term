@@ -68,7 +68,7 @@ export function Footer() {
         {/* Bottom row: meta info */}
         <div className="mt-8 flex flex-col items-start justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-dim)] md:flex-row md:items-center">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-            <span>v0.5.0</span>
+            <span>v0.8.0</span>
             <span>◊</span>
             <span>Windows 10/11 · x64</span>
             <span>◊</span>

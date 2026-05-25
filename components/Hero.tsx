@@ -10,8 +10,8 @@ export function Hero() {
           <Wordmark />
         </div>
         <nav className="hidden items-center gap-7 text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-ink-muted)] md:flex">
-          <a href="#manifesto" className="link-sweep" style={{ color: 'var(--color-ink)' }}>
-            Manifesto
+          <a href="#updates" className="link-sweep" style={{ color: 'var(--color-accent)' }}>
+            v0.8.0
           </a>
           <a href="#capabilities" className="link-sweep" style={{ color: 'var(--color-ink)' }}>
             Capacidades
@@ -19,15 +19,21 @@ export function Hero() {
           <a href="#specs" className="link-sweep" style={{ color: 'var(--color-ink)' }}>
             Specs
           </a>
-          <a href="#pricing" className="link-sweep" style={{ color: 'var(--color-ink)' }}>
+          <a
+            href="https://academy.dantetesta.com.br/"
+            target="_blank"
+            rel="noopener"
+            className="link-sweep"
+            style={{ color: 'var(--color-ink)' }}
+          >
             Comprar
           </a>
         </nav>
         <a
-          href="#pricing"
+          href="#updates"
           className="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-accent)]"
         >
-          v0.5.0 →
+          v0.8.0 →
         </a>
       </header>
 
@@ -38,7 +44,7 @@ export function Hero() {
           {/* Marker tipo magazine */}
           <div className="reveal reveal-1 mb-6 flex items-center gap-4 text-[10px]">
             <span className="font-mono uppercase tracking-[0.18em] text-[color:var(--color-accent)]">
-              Issue №01
+              v0.8.0 · Novo
             </span>
             <span className="h-px w-12 bg-[color:var(--color-rule-strong)]" />
             <span className="font-mono uppercase tracking-[0.18em] text-[color:var(--color-ink-dim)]">
@@ -66,12 +72,17 @@ export function Hero() {
 
           {/* CTAs */}
           <div className="reveal reveal-4 mt-10 flex flex-wrap items-center gap-3">
-            <a href="#pricing" className="btn-prime accent-glow">
-              <span>Adquirir · R$ 25</span>
+            <a
+              href="https://academy.dantetesta.com.br/"
+              target="_blank"
+              rel="noopener"
+              className="btn-prime accent-glow"
+            >
+              <span>Comprar · R$ 25</span>
               <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.2} />
             </a>
-            <a href="#capabilities" className="btn-ghost">
-              Como funciona
+            <a href="#updates" className="btn-ghost">
+              Novidades v0.8.0
             </a>
           </div>
 
@@ -108,6 +119,8 @@ export function Hero() {
               <li>★ Gemini CLI</li>
               <li>◊</li>
               <li>★ Codex</li>
+              <li>◊</li>
+              <li>★ Antigravity</li>
               <li>◊</li>
               <li>★ Aider</li>
               <li>◊</li>

@@ -24,9 +24,9 @@ const mono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Peu-Term — Terminal com IA pra Windows',
+  title: 'Peu-Term v0.8.0 — Terminal com IA pra Windows',
   description:
-    'Cansei de ter 14 janelas pra rodar Claude, Gemini e Codex. Fiz o Peu-Term. Split view, voz pra IA, explica erro com Groq, editor integrado, snippets, custom providers. Tudo num terminal só.',
+    'Terminal pra Windows feito pra quem usa Claude, Gemini e Codex. Split view, SSH, navegador embutido, biblioteca de prompts, fuzzy finder, voz pra IA, explica erro com Groq. Tudo num app — R$ 25, pagamento único.',
   authors: [{ name: 'Pedro Victor' }],
   keywords: [
     'terminal',
@@ -41,13 +41,15 @@ export const metadata: Metadata = {
     'produtividade',
     'split terminal',
     'voz pra terminal',
+    'SSH terminal',
     'Aider',
-    'Cody'
+    'Cody',
+    'fuzzy finder'
   ],
   openGraph: {
-    title: 'Peu-Term',
+    title: 'Peu-Term v0.8.0',
     description:
-      'O terminal que faltava no Windows. Split view, voz, explica erro com IA — feito pra quem usa Claude/Gemini/Codex.',
+      'O terminal que faltava no Windows. SSH, navegador embutido, split, voz, explica erro com IA — R$ 25, pagamento único.',
     type: 'website',
     locale: 'pt_BR'
   }

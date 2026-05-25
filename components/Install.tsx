@@ -79,7 +79,7 @@ export function Install() {
       <div className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
         <div className="mb-16 grid grid-cols-12 gap-x-6">
           <div className="col-span-12 md:col-span-4">
-            <span className="section-marker">№07 · Instalação</span>
+            <span className="section-marker">№08 · Instalação</span>
             <h2 className="headline-section mt-4">
               Como você <em style={{ color: 'var(--color-accent)' }}>recebe</em>.
             </h2>
@@ -134,7 +134,7 @@ export function Install() {
               Pronto pra trocar 14 janelas por uma?
             </h4>
             <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.16em] text-[color:var(--color-ink-dim)]">
-              v0.5.0 · Windows 10/11 · ~4 MB
+              v0.8.0 · Windows 10/11 · ~4 MB
             </p>
           </div>
           <a href="#pricing" className="btn-prime accent-glow">

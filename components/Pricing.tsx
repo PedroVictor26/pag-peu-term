@@ -6,6 +6,9 @@ const INCLUSO = [
   'Comunidade WhatsApp direta comigo',
   'Custom AI providers ilimitados',
   'Voz pra IA (free tier Groq)',
+  'Perfis SSH / VPS com reconexão automática',
+  'Navegador embutido com barra de endereço',
+  'Biblioteca de prompts + fuzzy finder',
   'Editor + visualizador integrado',
   'Suporte priorizado por email'
 ]
@@ -20,7 +23,7 @@ export function Pricing() {
         <div className="grid grid-cols-1 gap-x-12 gap-y-16 md:grid-cols-12">
           {/* Esquerda — manifesto de preço */}
           <div className="md:col-span-5">
-            <span className="section-marker">№06 · Preço</span>
+            <span className="section-marker">№07 · Preço</span>
             <h2 className="headline-section mt-4">
               Paga uma vez.<br />
               Usa <em style={{ color: 'var(--color-accent)' }}>pra sempre</em>.
@@ -96,7 +99,7 @@ export function Pricing() {
               {/* CTA */}
               <div className="border-y border-[color:var(--color-rule)] px-6 py-5">
                 <a
-                  href="https://academy.dantetesta.com.br/download/peu-term-windows"
+                  href="https://academy.dantetesta.com.br/"
                   target="_blank"
                   rel="noopener"
                   className="group flex w-full items-center justify-between gap-3 border border-[color:var(--color-accent)] bg-[color:var(--color-accent)] px-6 py-4 text-[color:var(--color-bg)] transition hover:bg-[color:var(--color-accent-bright)]"

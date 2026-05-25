@@ -19,7 +19,7 @@ export function Capabilities() {
       <div className="mx-auto max-w-7xl px-6 pb-10 pt-24 md:px-10 md:pt-32">
         <div className="mb-16 flex items-end justify-between gap-6 border-b border-[color:var(--color-rule)] pb-8 md:mb-24">
           <div>
-            <span className="section-marker">№03 · Capacidades</span>
+            <span className="section-marker">№04 · Capacidades</span>
             <h2 className="headline-section mt-4 max-w-2xl">
               O que existe <em style={{ color: 'var(--color-accent)' }}>dentro</em>.
             </h2>

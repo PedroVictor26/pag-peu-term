@@ -60,7 +60,7 @@ const QAS: QA[] = [
     q: 'Tem auto-update?',
     a: (
       <>
-        Sim. Desde a v0.5.0: checa ao abrir, baixa e instala com o seu OK.
+        Sim. Checa ao abrir, baixa e instala com o seu OK. Quem comprou já recebeu tudo até a v0.8.0 de graça.
       </>
     )
   },
@@ -108,7 +108,7 @@ export function Faq() {
           {/* Esquerda — title sticky */}
           <div className="col-span-12 mb-10 md:col-span-4 md:mb-0">
             <div className="sticky top-10 flex flex-col gap-3">
-              <span className="section-marker">№08 · Q&amp;A</span>
+              <span className="section-marker">№09 · Q&amp;A</span>
               <h2 className="headline-section">
                 Antes que você <em style={{ color: 'var(--color-accent)' }}>pergunte</em>.
               </h2>
