@@ -8,6 +8,7 @@ import {
   Search,
   Send,
   FileSymlink,
+  Image,
   BarChart2,
   Zap,
   Check,
@@ -399,6 +400,11 @@ export default function NovididadesPage() {
                 icon={FileSymlink}
                 title="Caminhos clicáveis"
                 desc="Arquivos e caminhos na saída do terminal viram links — click abre no editor embutido."
+              />
+              <UpdateCard
+                icon={Image}
+                title="Imagem de fundo"
+                desc="Personalize o fundo do terminal com qualquer imagem. Opacidade ajustável."
               />
               <UpdateCard
                 icon={BarChart2}
