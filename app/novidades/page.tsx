@@ -12,17 +12,18 @@ import {
   BarChart2,
   Zap,
   Check,
+  Clipboard,
 } from 'lucide-react'
 import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Peu-Term v0.8.0 — Novidades · Terminal com IA pra Windows',
+  title: 'Peu-Term v0.8.3 — Novidades · Terminal com IA pra Windows',
   description:
-    'Saiu atualização grande: WhatsApp Web e navegador embutidos dentro do terminal, perfis SSH, biblioteca de prompts, fuzzy finder e mais. R$ 25, pagamento único, vitalício — quem já comprou recebe de graça.',
+    'Saiu atualização: Ctrl+V cola imagem direto no Claude Code / Codex / Gemini, com miniatura visual. Mais WhatsApp Web e navegador embutidos, perfis SSH, biblioteca de prompts. R$ 50, pagamento único, vitalício — quem já comprou recebe de graça.',
   openGraph: {
-    title: 'Peu-Term v0.8.0 — Novidades',
+    title: 'Peu-Term v0.8.3 — Novidades',
     description:
-      'WhatsApp Web + navegador dentro do terminal. R$ 25, pagamento único, vitalício. Quem já é cliente recebe de graça.',
+      'Ctrl+V cola imagem direto no Claude Code, Codex e Gemini. Mais WhatsApp Web + navegador embutidos. R$ 50, pagamento único, vitalício.',
     type: 'website',
     locale: 'pt_BR',
   },
@@ -56,7 +57,7 @@ function CtaBuy({ size = 'md' }: { size?: 'md' | 'lg' }) {
       className="btn-prime accent-glow"
       style={size === 'lg' ? { padding: '1.125rem 2rem', fontSize: '0.8125rem' } : {}}
     >
-      <span>Comprar · R$ 25</span>
+      <span>Comprar · R$ 50</span>
       <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.2} />
     </a>
   )
@@ -171,7 +172,7 @@ export default function NovididadesPage() {
             className="btn-prime"
             style={{ padding: '0.5rem 1rem', fontSize: '0.6875rem' }}
           >
-            Comprar · R$ 25
+            Comprar · R$ 50
           </a>
         </nav>
         <a
@@ -197,22 +198,22 @@ export default function NovididadesPage() {
             <div className="reveal reveal-1 mb-8 flex items-center gap-4">
               <span className="eyebrow">Saiu atualização grande</span>
               <span className="h-px w-10 bg-[color:var(--color-rule-strong)]" />
-              <span className="section-marker">v0.8.0 · 2026</span>
+              <span className="section-marker">v0.8.3 · 2026</span>
             </div>
 
             {/* Headline */}
             <h1 className="reveal reveal-2 headline-display max-w-5xl">
-              <span className="block">Peu-Term v0.8.0 —</span>
+              <span className="block">Peu-Term v0.8.3 —</span>
               <span className="block text-[color:var(--color-accent)]">
-                WhatsApp Web + navegador
+                Ctrl+V cola imagem
               </span>
-              <span className="block">dentro do terminal.</span>
+              <span className="block">direto no Claude Code.</span>
             </h1>
 
             {/* Subhead */}
             <p className="reveal reveal-3 mt-8 max-w-xl text-base leading-relaxed text-[color:var(--color-ink-muted)] md:text-lg">
-              Responde cliente sem sair do terminal. Abre qualquer site num split. E mais 8 adições que mudam o dia a dia — tudo por{' '}
-              <span className="text-[color:var(--color-ink)] font-semibold">R$ 25, pagamento único, pra sempre</span>.
+              Print screen → Ctrl+V → o Peu-Term mostra a miniatura e injeta no prompt do Claude, Codex ou Gemini. Mais WhatsApp Web, navegador embutido e 8 adições — tudo por{' '}
+              <span className="text-[color:var(--color-ink)] font-semibold">R$ 50, pagamento único, pra sempre</span>.
             </p>
 
             {/* CTAs */}
@@ -229,7 +230,7 @@ export default function NovididadesPage() {
                 className="inline-flex items-center gap-2 border border-[color:var(--color-accent)] px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-[color:var(--color-accent)]"
               >
                 <Zap className="h-3 w-3" strokeWidth={2} />
-                v0.8.0 disponível agora
+                v0.8.3 disponível agora
               </span>
               <span
                 className="inline-flex items-center gap-2 border border-[color:var(--color-rule-strong)] px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-[color:var(--color-ink-dim)]"
@@ -416,6 +417,12 @@ export default function NovididadesPage() {
                 title="Navegador embutido"
                 desc="Abra sites e painéis direto dentro do terminal — barra de endereço, histórico, sem sair do app."
               />
+              <UpdateCard
+                icon={Clipboard}
+                title="Colar imagem no prompt"
+                desc="Ctrl+V (ou Alt+V) com imagem no clipboard injeta @<path> no Claude / Codex / Gemini. Mostra miniatura por 3s."
+                kbd={['Ctrl', 'V']}
+              />
             </ul>
 
             <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.16em] text-[color:var(--color-ink-dim)]">
@@ -454,11 +461,11 @@ export default function NovididadesPage() {
                 <TerminalMockup
                   label="auto-update"
                   lines={[
-                    '● Peu-Term v0.8.0',
+                    '● Peu-Term v0.8.3',
                     '  Atualização instalada automaticamente',
                     '',
-                    '  ✓ WhatsApp Web embutido',
-                    '  ✓ Navegador embutido',
+                    '  ✓ Ctrl+V cola imagem no Claude / Codex / Gemini',
+                    '  ✓ WhatsApp Web + navegador embutidos',
                     '  ✓ +8 adições — é só usar',
                   ]}
                 />
@@ -475,7 +482,7 @@ export default function NovididadesPage() {
                   <span className="eyebrow">Ainda não comprou</span>
                 </div>
                 <h3 className="headline-section" style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)' }}>
-                  R$ 25 e é seu{' '}
+                  R$ 50 e é seu{' '}
                   <em style={{ color: 'var(--color-accent)', fontStyle: 'italic' }}>pra sempre</em>.
                 </h3>
                 <p className="text-[15px] leading-relaxed text-[color:var(--color-ink-muted)]">
@@ -483,6 +490,7 @@ export default function NovididadesPage() {
                 </p>
                 <ul className="space-y-2 text-[13px] text-[color:var(--color-ink-muted)]">
                   {[
+                    'Ctrl+V cola imagem direto no Claude / Codex / Gemini',
                     'WhatsApp Web + navegador embutidos',
                     'Perfis SSH, fuzzy finder, biblioteca de prompts',
                     'Funciona com Claude Code, Gemini, Codex, Antigravity',
@@ -555,7 +563,7 @@ export default function NovididadesPage() {
                 className="btn-prime accent-glow"
                 style={{ padding: '1.125rem 2.5rem', fontSize: '0.875rem' }}
               >
-                <span>Comprar agora · R$ 25</span>
+                <span>Comprar agora · R$ 50</span>
                 <ArrowUpRight className="h-4 w-4" strokeWidth={2.2} />
               </a>
               <a href="/" className="btn-ghost">

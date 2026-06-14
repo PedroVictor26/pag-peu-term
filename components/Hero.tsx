@@ -78,7 +78,7 @@ export function Hero() {
               rel="noopener"
               className="btn-prime accent-glow"
             >
-              <span>Comprar · R$ 25</span>
+              <span>Comprar · R$ 50</span>
               <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.2} />
             </a>
             <a href="#updates" className="btn-ghost">

@@ -6,7 +6,8 @@ import {
   Send,
   FileSymlink,
   Image,
-  BarChart2
+  BarChart2,
+  Clipboard
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
@@ -18,6 +19,12 @@ interface Update {
 }
 
 const UPDATES: Update[] = [
+  {
+    icon: Clipboard,
+    title: 'Colar imagem no Claude / Codex / Gemini',
+    desc: 'Print screen → Ctrl+V → o Peu-Term salva o PNG e injeta o caminho no prompt. Mostra miniatura por 3s pra você confirmar.',
+    kbd: ['Ctrl', 'V']
+  },
   {
     icon: Server,
     title: 'Perfis SSH / VPS',
@@ -74,12 +81,12 @@ export function Updates() {
           <div>
             <span className="section-marker">№02 · Novidades</span>
             <h2 className="headline-section mt-4">
-              v0.8.0 —{' '}
+              v0.8.3 —{' '}
               <em style={{ color: 'var(--color-accent)' }}>o que chegou</em>.
             </h2>
           </div>
           <p className="max-w-xs text-sm leading-relaxed text-[color:var(--color-ink-muted)]">
-            Oito adições que mudam o dia a dia. Disponível agora pra quem comprou — sem pagar de novo.
+            Cola imagem direto no prompt do Claude Code, Codex e Gemini. Mais 8 features do dia a dia. Sem pagar de novo.
           </p>
         </div>
 
