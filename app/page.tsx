@@ -1,9 +1,12 @@
 import { Hero } from '@/components/Hero'
-import { Updates } from '@/components/Updates'
-import { Manifesto } from '@/components/Manifesto'
-import { Capabilities } from '@/components/Capabilities'
+import { Pain } from '@/components/Pain'
+import { Wizard } from '@/components/Wizard'
+import { Agentes } from '@/components/Agentes'
+import { Companion } from '@/components/Companion'
+import { Embutidos } from '@/components/Embutidos'
+import { Monitor } from '@/components/Monitor'
 import { Extras } from '@/components/Extras'
-import { Specs } from '@/components/Specs'
+import { Manifesto } from '@/components/Manifesto'
 import { Pricing } from '@/components/Pricing'
 import { Install } from '@/components/Install'
 import { Faq } from '@/components/Faq'
@@ -13,11 +16,14 @@ export default function HomePage() {
   return (
     <main className="grain relative isolate">
       <Hero />
-      <Updates />
-      <Manifesto />
-      <Capabilities />
+      <Pain />
+      <Wizard />
+      <Agentes />
+      <Companion />
+      <Embutidos />
+      <Monitor />
       <Extras />
-      <Specs />
+      <Manifesto />
       <Pricing />
       <Install />
       <div id="faq">

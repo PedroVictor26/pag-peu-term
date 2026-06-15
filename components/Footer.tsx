@@ -1,24 +1,21 @@
 export function Footer() {
   return (
     <footer className="relative">
-      <div className="mx-auto max-w-7xl px-6 py-12 md:px-10">
-        {/* Top row: brand + links */}
+      <div className="container-wide py-12">
+        {/* Top row */}
         <div className="flex flex-col items-start justify-between gap-8 border-b border-[color:var(--color-rule)] pb-10 md:flex-row md:items-end">
           <div className="max-w-md">
             <div className="flex items-baseline gap-2">
-              <span
-                className="font-display-italic text-3xl leading-none"
-                style={{ fontStyle: 'italic' }}
-              >
+              <span className="font-display-italic text-3xl leading-none" style={{ fontStyle: 'italic' }}>
                 Peu
               </span>
-              <span className="font-mono text-sm uppercase tracking-[0.2em] text-[color:var(--color-ink-muted)]">
+              <span className="font-mono text-sm uppercase tracking-[0.28em] text-[color:var(--color-accent)]">
                 term
               </span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-[color:var(--color-ink-muted)]">
-              Um terminal que entende quem usa IA o dia inteiro. Feito sozinho,
-              em casa, no Windows, em 2026.
+              Terminal que entende quem usa IA o dia inteiro.
+              Feito em casa, no Windows, em 2026.
             </p>
           </div>
 
@@ -26,28 +23,38 @@ export function Footer() {
             <FooterCol
               title="Produto"
               items={[
-                { label: 'Manifesto', href: '#manifesto' },
-                { label: 'Capacidades', href: '#capabilities' },
-                { label: 'Specs', href: '#specs' },
-                { label: 'Pricing', href: '#pricing' }
+                { label: 'Wizard', href: '#wizard' },
+                { label: 'Multi-agente', href: '#agentes' },
+                { label: 'Companion', href: '#companion' },
+                { label: 'Preço', href: '#pricing' },
+                { label: 'FAQ', href: '#faq' }
               ]}
             />
             <FooterCol
-              title="Suporte"
+              title="Links"
               items={[
                 {
-                  label: 'WhatsApp ↗',
-                  href: 'https://chat.whatsapp.com/BbcvuNrFM57JPBl9vDBE5q',
+                  label: 'Comprar · R$ 50 ↗',
+                  href: 'https://academy.dantetesta.com.br/download/peu-term-windows',
                   external: true
                 },
-                { label: 'Q&A', href: '#faq' }
+                {
+                  label: 'Dante Testa Academy ↗',
+                  href: 'https://academy.dantetesta.com.br/',
+                  external: true
+                },
+                {
+                  label: 'Comunidade WhatsApp ↗',
+                  href: 'https://chat.whatsapp.com/BbcvuNrFM57JPBl9vDBE5q',
+                  external: true
+                }
               ]}
             />
           </div>
         </div>
 
-        {/* Crédito de inspiração — curto */}
-        <p className="mt-6 border-t border-[color:var(--color-rule)] pt-5 text-[12px] leading-relaxed text-[color:var(--color-ink-muted)]">
+        {/* Crédito */}
+        <p className="mt-6 text-[12px] leading-relaxed text-[color:var(--color-ink-muted)]">
           <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-accent)]">
             Inspiração
           </span>
@@ -61,30 +68,36 @@ export function Footer() {
             >
               Dante Shell ↗
             </a>{' '}
-            (Dante Testa · macOS).
+            (Dante Testa · macOS). Vendido na{' '}
+            <a
+              href="https://academy.dantetesta.com.br/download/peu-term-windows"
+              target="_blank"
+              rel="noopener"
+              className="link-sweep"
+            >
+              Dante Testa Academy ↗
+            </a>
           </span>
         </p>
 
-        {/* Bottom row: meta info */}
-        <div className="mt-8 flex flex-col items-start justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-dim)] md:flex-row md:items-center">
+        {/* Bottom meta */}
+        <div className="mt-6 flex flex-col items-start justify-between gap-4 border-t border-[color:var(--color-rule)] pt-6 font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-dim)] md:flex-row md:items-center">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-            <span>v0.8.0</span>
-            <span>◊</span>
+            <span>v0.11.11</span>
+            <span className="text-[color:var(--color-accent)]">◊</span>
             <span>Windows 10/11 · x64</span>
-            <span>◊</span>
+            <span className="text-[color:var(--color-accent)]">◊</span>
             <span>~4 MB</span>
-            <span>◊</span>
+            <span className="text-[color:var(--color-accent)]">◊</span>
+            <span>Tauri 2 · Nativo</span>
+            <span className="text-[color:var(--color-accent)]">◊</span>
             <span>Built in Brasil · 2026</span>
           </div>
-          <div className="flex items-center gap-2">
-            <span>Pedro V.</span>
-            <span>·</span>
-            <span>© MMXXVI</span>
-          </div>
+          <span>Pedro V. · © MMXXVI</span>
         </div>
       </div>
 
-      {/* Big accent wordmark — caché editorial no fim */}
+      {/* Big outline wordmark */}
       <div
         aria-hidden
         className="overflow-hidden border-t border-[color:var(--color-rule)] pb-1 pt-3"
@@ -94,8 +107,8 @@ export function Footer() {
           style={{
             fontStyle: 'italic',
             fontSize: 'clamp(5rem, 22vw, 24rem)',
-            color: 'var(--color-bg-paper)',
-            WebkitTextStroke: '1px var(--color-rule-strong)',
+            color: 'transparent',
+            WebkitTextStroke: '1px rgba(56,189,248,0.12)',
             letterSpacing: '-0.04em'
           }}
         >

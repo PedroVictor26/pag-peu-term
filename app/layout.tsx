@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
-import { Geist, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
+import { Instrument_Serif, JetBrains_Mono, Syne } from 'next/font/google'
 import './globals.css'
 
-// Tipografia escolhida com intenção:
-// - Instrument Serif: italic editorial, presença em headlines, contraste com mono
-// - Geist: neutro técnico, body texts (mesma família que devs já reconhecem do Vercel)
-// - JetBrains Mono: específica pra código + kbd + datapoints
+// Tipografia cinematográfica:
+// - Instrument Serif italic: headlines com presença editorial
+// - Syne: body sans que quebra o óbvio (Vercel/Inter estão por toda parte)
+// - JetBrains Mono: código, kbd, datapoints técnicos
 const serifDisplay = Instrument_Serif({
   subsets: ['latin'],
   weight: '400',
@@ -13,57 +13,60 @@ const serifDisplay = Instrument_Serif({
   variable: '--font-serif'
 })
 
-const geistSans = Geist({
+const syne = Syne({
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-sans'
 })
 
 const mono = JetBrains_Mono({
   subsets: ['latin'],
+  weight: ['400', '500', '600'],
   variable: '--font-mono'
 })
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://peu-term.vercel.app'
+
 export const metadata: Metadata = {
-  title: 'Peu-Term v0.8.0 — Terminal com IA pra Windows',
+  title: 'Peu-Term v0.11 — Terminal com IA pra Windows',
   description:
-    'Terminal pra Windows feito pra quem usa Claude, Gemini e Codex. Split view, SSH, navegador embutido, biblioteca de prompts, fuzzy finder, voz pra IA, explica erro com Groq. Tudo num app — R$ 50, pagamento único.',
+    'Terminal desktop nativo para Windows feito pra quem vive em CLIs de IA. Claude Code, Codex, Gemini — vários agentes rodando juntos, Wizard de Missão, Companion mobile, SSH, fuzzy finder. R$ 50, pagamento único, vitalício.',
   authors: [{ name: 'Pedro Victor' }],
   keywords: [
-    'terminal',
-    'IA',
-    'AI',
-    'Claude Code',
-    'Gemini CLI',
-    'Codex',
-    'Groq',
-    'Windows',
-    'desenvolvedor BR',
-    'produtividade',
-    'split terminal',
-    'voz pra terminal',
-    'SSH terminal',
-    'Aider',
-    'Cody',
-    'fuzzy finder'
+    'terminal', 'IA', 'AI', 'Claude Code', 'Gemini CLI', 'Codex', 'Groq',
+    'Windows', 'desenvolvedor BR', 'produtividade', 'split terminal',
+    'voz pra terminal', 'SSH terminal', 'Peu-Term'
   ],
   openGraph: {
-    title: 'Peu-Term v0.8.0',
+    title: 'Peu-Term v0.11 — Terminal com IA pra Windows',
     description:
-      'O terminal que faltava no Windows. SSH, navegador embutido, split, voz, explica erro com IA — R$ 50, pagamento único.',
+      'Vários Claude Code rodando juntos, Wizard de Missão, controle pelo celular — R$ 50, pagamento único.',
     type: 'website',
-    locale: 'pt_BR'
+    locale: 'pt_BR',
+    url: BASE_URL,
+    images: [
+      {
+        url: `${BASE_URL}/og.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'Peu-Term — Terminal com IA para Windows'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Peu-Term v0.11 — Terminal com IA pra Windows',
+    description:
+      'Vários Claude Code rodando juntos, Wizard de Missão, controle pelo celular — R$ 50, pagamento único.',
+    images: [`${BASE_URL}/og.jpg`]
   }
 }
 
-export default function RootLayout({
-  children
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="pt-BR"
-      className={`${serifDisplay.variable} ${geistSans.variable} ${mono.variable}`}
+      className={`${serifDisplay.variable} ${syne.variable} ${mono.variable}`}
     >
       <body className="min-h-screen antialiased">{children}</body>
     </html>

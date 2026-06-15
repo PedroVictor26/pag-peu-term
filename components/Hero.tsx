@@ -1,145 +1,206 @@
-import { ArrowUpRight } from 'lucide-react'
-import { HeroTerminal } from './HeroTerminal'
+import Image from 'next/image'
+import { ArrowUpRight, Zap } from 'lucide-react'
+
+const CHECKOUT = 'https://academy.dantetesta.com.br/download/peu-term-windows'
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden border-b border-[color:var(--color-rule)]">
-      {/* Top bar (header tipo magazine) */}
-      <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 pb-6 pt-6 md:px-10 md:pt-8">
-        <div className="flex items-center gap-3">
-          <Wordmark />
-        </div>
-        <nav className="hidden items-center gap-7 text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-ink-muted)] md:flex">
-          <a href="#updates" className="link-sweep" style={{ color: 'var(--color-accent)' }}>
-            v0.8.0
-          </a>
-          <a href="#capabilities" className="link-sweep" style={{ color: 'var(--color-ink)' }}>
-            Capacidades
-          </a>
-          <a href="#specs" className="link-sweep" style={{ color: 'var(--color-ink)' }}>
-            Specs
-          </a>
-          <a
-            href="https://academy.dantetesta.com.br/download/peu-term-windows"
-            target="_blank"
-            rel="noopener"
-            className="link-sweep"
-            style={{ color: 'var(--color-ink)' }}
-          >
-            Comprar
-          </a>
+    <section className="relative isolate min-h-screen overflow-hidden border-b border-[color:var(--color-rule)]">
+      {/* Imagem ambiente — camada sutil atrás da aurora */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 hero-ambient-layer"
+        style={{ zIndex: 0 }}
+      >
+        <Image
+          src="/shots/hero-ambient.png"
+          alt=""
+          fill
+          priority
+          quality={60}
+          sizes="100vw"
+          className="object-cover object-center"
+          style={{ opacity: 0.18, mixBlendMode: 'lighten' }}
+        />
+      </div>
+
+      {/* Aurora de fundo */}
+      <div className="aurora-bg" aria-hidden>
+        <div className="aurora-blob aurora-blob-1" />
+        <div className="aurora-blob aurora-blob-2" />
+        <div className="aurora-blob aurora-blob-3" />
+      </div>
+
+      {/* Mesh grid lines */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(56,189,248,0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(56,189,248,0.04) 1px, transparent 1px)
+          `,
+          backgroundSize: '80px 80px'
+        }}
+      />
+
+      {/* Nav */}
+      <header className="relative z-20 mx-auto flex max-w-[1280px] items-center justify-between px-6 pb-6 pt-6 md:px-10 md:pt-8">
+        <Wordmark />
+        <nav className="hidden items-center gap-8 text-[11px] uppercase tracking-[0.18em] md:flex">
+          {[
+            { href: '#wizard', label: 'Wizard' },
+            { href: '#agentes', label: 'Agentes' },
+            { href: '#companion', label: 'Companion' },
+            { href: '#pricing', label: 'Preço' }
+          ].map(({ href, label }) => (
+            <a
+              key={href}
+              href={href}
+              className="font-mono text-[color:var(--color-ink-muted)] transition hover:text-[color:var(--color-ink)]"
+            >
+              {label}
+            </a>
+          ))}
         </nav>
         <a
-          href="#updates"
-          className="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-accent)]"
+          href={CHECKOUT}
+          target="_blank"
+          rel="noopener"
+          className="hidden items-center gap-2 border border-[color:var(--color-accent)] bg-[color:var(--color-accent)] px-4 py-2 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[#050810] transition hover:bg-[color:var(--color-accent-bright)] md:flex"
         >
-          v0.8.0 →
+          Comprar · R$ 50
         </a>
       </header>
 
-      {/* Hero grid */}
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-10 gap-y-12 px-6 pb-20 pt-10 md:px-10 md:pb-32 md:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-x-16">
-        {/* COLUNA ESQUERDA — statement editorial */}
-        <div className="relative flex flex-col justify-center">
-          {/* Marker tipo magazine */}
-          <div className="reveal reveal-1 mb-6 flex items-center gap-4 text-[10px]">
-            <span className="font-mono uppercase tracking-[0.18em] text-[color:var(--color-accent)]">
-              v0.8.0 · Novo
-            </span>
-            <span className="h-px w-12 bg-[color:var(--color-rule-strong)]" />
-            <span className="font-mono uppercase tracking-[0.18em] text-[color:var(--color-ink-dim)]">
-              Terminal · Windows · 2026
-            </span>
-          </div>
-
-          {/* Headline em duas linhas — efeito serif italic */}
-          <h1 className="reveal reveal-2 headline-display">
-            <span className="block">Cansei de</span>
-            <span className="block">
-              ter <em className="not-italic" style={{ fontStyle: 'normal', fontFamily: 'var(--font-sans)', fontWeight: 300, letterSpacing: '-0.04em' }}>14</em> janelas
-            </span>
-            <span className="block text-[color:var(--color-accent)]">— fiz isso.</span>
-          </h1>
-
-          {/* Sub editorial — não é "tagline corporativa" */}
-          <p className="reveal reveal-3 mt-8 max-w-md text-base leading-relaxed text-[color:var(--color-ink-muted)] md:text-lg">
-            Terminal pra Windows feito pra quem usa{' '}
-            <span className="text-[color:var(--color-ink)]">Claude</span>,{' '}
-            <span className="text-[color:var(--color-ink)]">Gemini</span>,{' '}
-            <span className="text-[color:var(--color-ink)]">Codex</span>{' '}
-            — sem cloud, sem login, sem bagunça.
-          </p>
-
-          {/* CTAs */}
-          <div className="reveal reveal-4 mt-10 flex flex-wrap items-center gap-3">
-            <a
-              href="https://academy.dantetesta.com.br/download/peu-term-windows"
-              target="_blank"
-              rel="noopener"
-              className="btn-prime accent-glow"
-            >
-              <span>Comprar · R$ 50</span>
-              <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.2} />
-            </a>
-            <a href="#updates" className="btn-ghost">
-              Novidades v0.8.0
-            </a>
-          </div>
-
-          {/* Micro-texto de preço — reforça barato + vitalício */}
-          <p className="reveal reveal-4 mt-4 font-mono text-[11px] uppercase tracking-[0.14em] text-[color:var(--color-ink-dim)]">
-            Pagamento único · acesso vitalício · sem mensalidade
-          </p>
-
-          {/* Trust line — datapoints em mono, não "trusted by N developers" */}
-          <dl className="reveal reveal-5 mt-14 grid grid-cols-3 gap-x-4 border-t border-[color:var(--color-rule)] pt-6 text-xs">
-            <Datapoint label="Tamanho" value="~4 MB" />
-            <Datapoint label="Panes / tab" value="até 9" />
-            <Datapoint label="Telemetria" value="zero" />
-          </dl>
+      {/* Hero content */}
+      <div className="relative z-10 mx-auto max-w-[1280px] px-6 pb-16 pt-10 md:px-10 md:pb-24 md:pt-14">
+        {/* Eyebrow badge */}
+        <div className="reveal reveal-1 mb-8 inline-flex items-center gap-3">
+          <span className="badge">
+            <span className="badge-dot" />
+            v0.11.11 · Novo
+          </span>
+          <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-[color:var(--color-ink-dim)]">
+            Windows · Tauri 2 · Nativo
+          </span>
         </div>
 
-        {/* COLUNA DIREITA — terminal vivo */}
-        <div className="reveal reveal-3 relative flex items-center justify-center lg:justify-end">
-          <HeroTerminal />
+        {/* Grid: texto + imagem */}
+        <div className="grid grid-cols-1 items-center gap-x-16 gap-y-14 lg:grid-cols-[1fr_1.15fr]">
+          {/* Coluna texto */}
+          <div>
+            <h1 className="reveal reveal-2 headline-display">
+              <span className="block">Seu exército</span>
+              <span className="block">de IAs,</span>
+              <span className="block text-gradient-sky">num só lugar.</span>
+            </h1>
+
+            <p className="reveal reveal-3 mt-8 max-w-[480px] text-[17px] leading-[1.65] text-[color:var(--color-ink-muted)]">
+              Terminal desktop para Windows feito pra quem vive em{' '}
+              <span className="text-[color:var(--color-ink)]">Claude Code</span>,{' '}
+              <span className="text-[color:var(--color-ink)]">Codex</span> e{' '}
+              <span className="text-[color:var(--color-ink)]">Gemini</span>{' '}
+              — Wizard de Missão, multi-agente, controle pelo celular.
+            </p>
+
+            {/* CTAs */}
+            <div className="reveal reveal-4 mt-10 flex flex-wrap items-center gap-4">
+              <a
+                href={CHECKOUT}
+                target="_blank"
+                rel="noopener"
+                className="btn-prime"
+              >
+                <Zap className="h-3.5 w-3.5" strokeWidth={2.5} />
+                <span>Comprar · R$ 50</span>
+                <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.2} />
+              </a>
+              <a href="#wizard" className="btn-ghost">
+                Ver como funciona
+              </a>
+            </div>
+
+            {/* Selos */}
+            <div className="reveal reveal-4 mt-5 flex flex-wrap gap-x-5 gap-y-1">
+              {[
+                'Pagamento único',
+                'Acesso vitalício',
+                'Sem mensalidade',
+                'Quem já tem recebe grátis'
+              ].map((s) => (
+                <span
+                  key={s}
+                  className="font-mono text-[10px] uppercase tracking-[0.14em] text-[color:var(--color-ink-dim)]"
+                >
+                  · {s}
+                </span>
+              ))}
+            </div>
+
+            {/* Stats */}
+            <dl className="reveal reveal-5 mt-12 grid grid-cols-3 gap-x-6 border-t border-[color:var(--color-rule)] pt-7">
+              <StatItem value="~4 MB" label="instalador" />
+              <StatItem value="até 9" label="terminais" />
+              <StatItem value="zero" label="telemetria" />
+            </dl>
+          </div>
+
+          {/* Coluna imagem — print real */}
+          <div className="reveal reveal-3 relative">
+            {/* Glow atrás da imagem */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -inset-10 opacity-50"
+              style={{
+                background: 'radial-gradient(ellipse at center, rgba(56,189,248,0.15) 0%, transparent 65%)',
+                filter: 'blur(60px)'
+              }}
+            />
+            <div className="device-frame shot-glow relative float">
+              <div className="device-titlebar">
+                <span className="window-dot window-dot-r" />
+                <span className="window-dot window-dot-y" />
+                <span className="window-dot window-dot-g" />
+                <span className="ml-3 font-mono text-[10px] text-[color:var(--color-ink-dim)]">
+                  Peu-Term v0.11 — 4 agentes · WhatsApp
+                </span>
+              </div>
+              <div className="relative overflow-hidden">
+                <Image
+                  src="/shots/grid-4-terminais.png"
+                  alt="Grid de 4 terminais Claude Code rodando em paralelo com WhatsApp embutido"
+                  width={900}
+                  height={560}
+                  className="w-full object-cover"
+                  priority
+                />
+                {/* Scanline */}
+                <div className="scanline" aria-hidden />
+              </div>
+            </div>
+            {/* Label da imagem */}
+            <p className="mt-3 text-right font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-dim)]">
+              Fig. 01 — 4 Claude Code + WhatsApp · simultâneos
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Marquee na base — "currently running" */}
+      {/* Marquee base */}
       <div className="relative z-10 overflow-hidden border-t border-[color:var(--color-rule)] py-3">
         <div className="marquee-track">
           {[...Array(2)].map((_, i) => (
             <ul
               key={i}
-              className="flex shrink-0 items-center gap-12 px-6 font-mono text-[10px] uppercase tracking-[0.22em] text-[color:var(--color-ink-dim)]"
+              className="flex shrink-0 items-center gap-10 px-6 font-mono text-[10px] uppercase tracking-[0.22em] text-[color:var(--color-ink-dim)]"
               aria-hidden={i === 1}
             >
-              <li>★ Claude Code</li>
-              <li>◊</li>
-              <li>★ Gemini CLI</li>
-              <li>◊</li>
-              <li>★ Codex</li>
-              <li>◊</li>
-              <li>★ Antigravity</li>
-              <li>◊</li>
-              <li>★ Aider</li>
-              <li>◊</li>
-              <li>★ Cody</li>
-              <li>◊</li>
-              <li>★ sgpt</li>
-              <li>◊</li>
-              <li>★ Pyenv</li>
-              <li>◊</li>
-              <li>★ Docker CLI</li>
-              <li>◊</li>
-              <li>★ npm / pnpm / bun</li>
-              <li>◊</li>
-              <li>★ Git</li>
-              <li>◊</li>
-              <li>★ WSL2</li>
-              <li>◊</li>
-              <li>★ PowerShell 7</li>
-              <li>◊</li>
+              {['Claude Code','★','Gemini CLI','★','Codex','★','Antigravity','★','Aider','★','Cody','★','sgpt','★','Docker CLI','★','npm / pnpm','★','Git','★','WSL2','★','PowerShell 7','★','SSH','★'].map((item, idx) => (
+                <li key={idx} style={{ color: item === '★' ? 'var(--color-accent)' : undefined }}>
+                  {item}
+                </li>
+              ))}
             </ul>
           ))}
         </div>
@@ -148,9 +209,22 @@ export function Hero() {
   )
 }
 
-function Datapoint({ label, value }: { label: string; value: string }) {
+function Wordmark() {
   return (
-    <div className="flex flex-col gap-1">
+    <a href="/" className="flex items-baseline gap-2">
+      <span className="font-display-italic text-[1.6rem] leading-none" style={{ fontStyle: 'italic' }}>
+        Peu
+      </span>
+      <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--color-accent)]">
+        term
+      </span>
+    </a>
+  )
+}
+
+function StatItem({ value, label }: { value: string; label: string }) {
+  return (
+    <div className="flex flex-col gap-1.5">
       <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-[color:var(--color-ink-dim)]">
         {label}
       </dt>
@@ -158,21 +232,5 @@ function Datapoint({ label, value }: { label: string; value: string }) {
         {value}
       </dd>
     </div>
-  )
-}
-
-function Wordmark() {
-  return (
-    <a href="/" className="flex items-baseline gap-2">
-      <span
-        className="font-display-italic text-2xl leading-none"
-        style={{ fontStyle: 'italic' }}
-      >
-        Peu
-      </span>
-      <span className="font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-ink-muted)]">
-        term
-      </span>
-    </a>
   )
 }

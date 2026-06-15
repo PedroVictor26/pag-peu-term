@@ -1,166 +1,122 @@
-import type { ReactNode } from 'react'
+'use client'
 
-interface QA {
-  q: string
-  a: ReactNode
-}
+import { useState } from 'react'
+import { ScrollReveal } from './ScrollReveal'
+import { Plus } from 'lucide-react'
 
-const QAS: QA[] = [
+const CHECKOUT = 'https://academy.dantetesta.com.br/download/peu-term-windows'
+
+const FAQS = [
   {
-    q: 'Preciso pagar pela Groq pra usar a voz?',
-    a: (
-      <>
-        Não. O free tier (~25 req/min, 30s por gravação) é suficiente pro uso pessoal o dia inteiro.
-      </>
-    )
+    q: 'Funciona com qual versão do Windows?',
+    a: 'Windows 10 e 11, 64-bit. Tauri roda nativamente — sem WSL obrigatório, sem Docker pra o app em si.'
   },
   {
-    q: 'Roda em qual Windows?',
-    a: (
-      <>
-        Windows 10 e 11, 64-bit. Mac, Linux e ARM estão no roadmap.
-      </>
-    )
+    q: 'Precisa instalar algo além do Peu-Term?',
+    a: 'Não. Instalador de ~4 MB. O WebView2 já vem no Windows 10/11. Se quiser voz, só precisa de uma chave Groq (free tier). Para Companion, instalar Tailscale (grátis).'
   },
   {
-    q: 'Funciona com WSL, PowerShell, CMD?',
-    a: (
-      <>
-        Sim — PowerShell 5/7, CMD, Git Bash, WSL (via{' '}
-        <code className="font-mono text-[color:var(--color-accent)]">wsl.exe</code>
-        ), pwsh-core. Troca o default por projeto via favorito.
-      </>
-    )
+    q: 'Quem já comprou antes precisa pagar de novo?',
+    a: 'Não. Pagamento único mesmo — quem já comprou qualquer versão anterior recebe o v0.11.11 de graça pela atualização automática.'
   },
   {
-    q: 'Posso usar com Claude Code, Gemini CLI e Codex que já tenho instalados?',
-    a: (
-      <>
-        Sim — a TopBar executa{' '}
-        <code className="font-mono text-[color:var(--color-accent)]">claude</code>,{' '}
-        <code className="font-mono text-[color:var(--color-accent)]">gemini</code>{' '}
-        e{' '}
-        <code className="font-mono text-[color:var(--color-accent)]">codex</code>{' '}
-        do PATH. Outras CLIs (Aider, Cody, sgpt…) viram provider em 1 click.
-      </>
-    )
+    q: 'O Companion exige conta de nuvem?',
+    a: 'Não. A conexão PC↔celular é via Tailscale (rede privada gratuita). Nenhum dado passa por servidor meu — é ponto a ponto criptografado.'
   },
   {
-    q: 'Meus prompts e conversas saem do meu PC?',
-    a: (
-      <>
-        Não — zero telemetria. Só sai o que você manda à Groq (voz e explicar erro).
-        Tudo persiste em{' '}
-        <code className="font-mono text-[color:var(--color-accent)]">~/.peu-term/</code>{' '}
-        local; key no Windows Credential Manager.
-      </>
-    )
+    q: 'Funciona com Claude Code sem problema?',
+    a: 'Sim. É o caso de uso principal. Split até 9 panes, cada um com PTY independente — vários Claude Code rodando ao mesmo tempo sem conflito de sessão.'
   },
   {
-    q: 'Tem auto-update?',
-    a: (
-      <>
-        Sim. Checa ao abrir, baixa e instala com o seu OK. Quem comprou já recebeu tudo até a v0.8.0 de graça.
-      </>
-    )
+    q: 'O Wizard de Missão usa qual IA?',
+    a: 'Ele cria o plano de subtarefas e você valida antes de disparar. A execução é feita pelos agentes que você tem configurados (Claude, Codex, Gemini, etc.) — não é uma IA própria minha.'
   },
   {
-    q: 'Posso usar comercialmente / na minha empresa?',
-    a: (
-      <>
-        Sim, por usuário. Times de 5+ fala na comunidade — acertamos valor empresarial.
-      </>
-    )
-  },
-  {
-    q: 'O .exe é seguro? SmartScreen reclamou.',
-    a: (
-      <>
-        Sim. O aviso é porque ainda não há assinatura digital — esperado em apps indie.
-        Code signing entra com volume mínimo atingido.
-      </>
-    )
-  },
-  {
-    q: 'É baseado no Dante Shell?',
-    a: (
-      <>
-        Sim —{' '}
-        <a
-          href="https://academy.dantetesta.com.br/"
-          target="_blank"
-          rel="noopener"
-          className="link-sweep"
-        >
-          Dante Shell ↗
-        </a>{' '}
-        (macOS) foi a referência. Adaptei pra Windows com Groq, custom providers e editor embutido.
-      </>
-    )
+    q: 'Tem garantia?',
+    a: 'Sim. Se não funcionar no seu Windows depois de tentar a instalação, me chama na comunidade WhatsApp. A gente resolve ou devolve — sem stress.'
   }
 ]
 
 export function Faq() {
+  const [open, setOpen] = useState<number | null>(null)
+
   return (
-    <section className="relative border-b border-[color:var(--color-rule)]">
-      <div className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
-        <div className="grid grid-cols-12 gap-x-6">
-          {/* Esquerda — title sticky */}
-          <div className="col-span-12 mb-10 md:col-span-4 md:mb-0">
-            <div className="sticky top-10 flex flex-col gap-3">
-              <span className="section-marker">№09 · Q&amp;A</span>
-              <h2 className="headline-section">
-                Antes que você <em style={{ color: 'var(--color-accent)' }}>pergunte</em>.
-              </h2>
-              <p className="mt-4 max-w-xs text-sm leading-relaxed text-[color:var(--color-ink-muted)]">
-                Faltou algo? Fala direto no WhatsApp — respondo eu mesmo.
+    <section id="faq" className="relative border-b border-[color:var(--color-rule)] bg-[color:var(--color-bg-paper)]">
+      <div className="container-wide section-pad">
+        <ScrollReveal className="mb-14">
+          <span className="section-marker">№08 · Perguntas</span>
+          <h2 className="headline-section mt-4 max-w-lg">
+            Perguntas <em style={{ color: 'var(--color-accent)' }}>frequentes.</em>
+          </h2>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 gap-x-14 lg:grid-cols-[1fr_1.5fr]">
+          {/* Coluna esquerda — contexto */}
+          <ScrollReveal className="hidden lg:block">
+            <div className="sticky top-10 space-y-6">
+              <p className="text-[15px] leading-relaxed text-[color:var(--color-ink-muted)]">
+                Tem mais dúvida? Me chama na comunidade WhatsApp — respondo pessoalmente.
               </p>
               <a
                 href="https://chat.whatsapp.com/BbcvuNrFM57JPBl9vDBE5q"
                 target="_blank"
                 rel="noopener"
-                className="mt-2 font-mono text-[11px] uppercase tracking-[0.18em] link-sweep"
+                className="btn-ghost inline-flex"
               >
                 Entrar na comunidade ↗
               </a>
             </div>
-          </div>
+          </ScrollReveal>
 
-          {/* Direita — Q&A list */}
-          <div className="col-span-12 md:col-span-8">
-            <ol className="divide-y divide-[color:var(--color-rule)] border-y border-[color:var(--color-rule)]">
-              {QAS.map((qa, i) => (
-                <li
-                  key={i}
-                  className="grid grid-cols-12 gap-x-4 gap-y-3 py-6 md:py-8"
-                >
-                  <div className="col-span-1">
-                    <span
-                      className="font-mono text-[11px] text-[color:var(--color-accent)]"
-                      style={{ fontVariantNumeric: 'tabular-nums' }}
-                    >
-                      Q{String(i + 1).padStart(2, '0')}
+          {/* Acordeão */}
+          <div className="space-y-0">
+            {FAQS.map((faq, i) => (
+              <ScrollReveal key={i} delay={i * 40}>
+                <div className="border-b border-[color:var(--color-rule)]">
+                  <button
+                    className="flex w-full items-center justify-between gap-4 py-5 text-left transition hover:text-[color:var(--color-accent)]"
+                    onClick={() => setOpen(open === i ? null : i)}
+                    aria-expanded={open === i}
+                  >
+                    <span className="text-[15px] font-medium leading-snug text-[color:var(--color-ink)]">
+                      {faq.q}
                     </span>
-                  </div>
-                  <div className="col-span-11">
-                    <h3
-                      className="font-display-italic text-xl leading-snug md:text-2xl"
-                      style={{ fontStyle: 'italic', color: 'var(--color-ink)' }}
-                    >
-                      {qa.q}
-                    </h3>
-                    <p className="mt-3 max-w-prose text-[15px] leading-relaxed text-[color:var(--color-ink-muted)]">
-                      <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-accent)] mr-2">
-                        R.
-                      </span>
-                      {qa.a}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ol>
+                    <Plus
+                      className="h-4 w-4 flex-shrink-0 text-[color:var(--color-accent)] transition-transform"
+                      style={{ transform: open === i ? 'rotate(45deg)' : 'rotate(0deg)' }}
+                      strokeWidth={2}
+                    />
+                  </button>
+                  {open === i && (
+                    <div className="pb-5 text-[14px] leading-relaxed text-[color:var(--color-ink-muted)]">
+                      {faq.a}
+                    </div>
+                  )}
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
+
+        {/* CTA final */}
+        <ScrollReveal delay={200} className="mt-20 flex flex-col items-center gap-6 text-center">
+          <h3 className="headline-feature mx-auto max-w-xl">
+            Pronto pra rodar{' '}
+            <em style={{ color: 'var(--color-accent)' }}>vários agentes</em>{' '}
+            de uma vez?
+          </h3>
+          <a
+            href={CHECKOUT}
+            target="_blank"
+            rel="noopener"
+            className="btn-prime"
+          >
+            Comprar · R$ 50 · Pagamento único →
+          </a>
+          <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-[color:var(--color-ink-dim)]">
+            Vitalício · sem mensalidade · quem já tem recebe grátis
+          </p>
+        </ScrollReveal>
       </div>
     </section>
   )
