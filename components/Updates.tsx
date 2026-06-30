@@ -7,7 +7,11 @@ import {
   FileSymlink,
   Image,
   BarChart2,
-  Clipboard
+  Clipboard,
+  Layers,
+  SunMoon,
+  Settings2,
+  Smartphone,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
@@ -20,53 +24,73 @@ interface Update {
 
 const UPDATES: Update[] = [
   {
+    icon: Layers,
+    title: 'Canvas — tudo lado a lado',
+    desc: 'Espalhe terminais, notas, grupos, imagens e um browser no plano espacial. Andares viram branches git — cada agente na sua branch, em paralelo. Cabos ligam a saída de um terminal na entrada do próximo.',
+  },
+  {
+    icon: SunMoon,
+    title: 'Modo claro + escuro',
+    desc: 'Além do obsidian, agora tem tema claro. Troca em Configurações → Aparência e salva entre sessões.',
+  },
+  {
+    icon: Settings2,
+    title: 'Configurações repaginadas',
+    desc: 'Painel estilo macOS — categorias na lateral, sem procurar opção espalhada em modal. Aparência, Terminal, SSH e Atalhos num lugar só.',
+  },
+  {
+    icon: Smartphone,
+    title: 'Companion — controle pelo celular',
+    desc: 'Abra o Companion no celular e monitore ou envie comandos pro seu terminal sem estar na frente do PC.',
+  },
+  {
     icon: Clipboard,
     title: 'Colar imagem no Claude / Codex / Gemini',
     desc: 'Print screen → Ctrl+V → o Peu-Term salva o PNG e injeta o caminho no prompt. Mostra miniatura por 3s pra você confirmar.',
-    kbd: ['Ctrl', 'V']
+    kbd: ['Ctrl', 'V'],
   },
   {
     icon: Server,
     title: 'Perfis SSH / VPS',
-    desc: 'Salve servidores e conecte num clique. Reconexão automática, gerenciador de chaves e ping na barra de status.'
+    desc: 'Salve servidores e conecte num clique. Reconexão automática, gerenciador de chaves e ping na barra de status.',
   },
   {
     icon: Globe,
     title: 'Navegador embutido',
-    desc: 'Abra sites e painéis direto dentro do terminal — barra de endereço, histórico, sem sair do app.'
+    desc: 'Abra sites e painéis direto dentro do terminal — barra de endereço, histórico, sem sair do app.',
   },
   {
     icon: BookMarked,
     title: 'Biblioteca de prompts',
-    desc: 'Salve seus prompts favoritos e injete direto no CLI ativo. Chega de copiar e colar do Notion.'
+    desc: 'Salve seus prompts favoritos e injete direto no CLI ativo. Chega de copiar e colar do Notion.',
   },
   {
     icon: Search,
     title: 'Fuzzy finder',
     desc: 'Abre arquivos de qualquer pasta em milissegundos.',
-    kbd: ['Ctrl', 'Shift', 'P']
+    kbd: ['Ctrl', 'Shift', 'P'],
   },
   {
     icon: Send,
     title: 'Enviar seleção pro CLI',
     desc: 'Seleciona qualquer texto na saída e manda pro terminal ativo sem copiar e colar.',
-    kbd: ['Ctrl', 'Shift', 'E']
+    kbd: ['Ctrl', 'Shift', 'E'],
   },
   {
     icon: FileSymlink,
     title: 'Caminhos clicáveis',
-    desc: 'Arquivos e caminhos na saída do terminal viram links — click abre no editor embutido.'
+    desc: 'Arquivos e caminhos na saída do terminal viram links — click abre no editor embutido.',
   },
   {
     icon: Image,
     title: 'Imagem de fundo',
-    desc: 'Personalize o fundo do terminal com qualquer imagem. Opacidade ajustável.'
+    desc: 'Personalize o fundo do terminal com qualquer imagem. Opacidade ajustável.',
   },
   {
     icon: BarChart2,
     title: 'Barra de status',
-    desc: 'Projeto, branch git, hora e ping SSH — tudo visível sem tirar o olho do código.'
-  }
+    desc: 'Projeto, branch git, hora e ping SSH — tudo visível sem tirar o olho do código.',
+  },
 ]
 
 export function Updates() {
@@ -81,12 +105,12 @@ export function Updates() {
           <div>
             <span className="section-marker">№02 · Novidades</span>
             <h2 className="headline-section mt-4">
-              v0.8.3 —{' '}
-              <em style={{ color: 'var(--color-accent)' }}>o que chegou</em>.
+              v0.11.17 —{' '}
+              <em style={{ color: 'var(--color-accent)' }}>Canvas, tema e mais</em>.
             </h2>
           </div>
           <p className="max-w-xs text-sm leading-relaxed text-[color:var(--color-ink-muted)]">
-            Cola imagem direto no prompt do Claude Code, Codex e Gemini. Mais 8 features do dia a dia. Sem pagar de novo.
+            Canvas espacial, tema claro/escuro, configurações repaginadas e Companion no celular. Tudo sem pagar de novo.
           </p>
         </div>
 
