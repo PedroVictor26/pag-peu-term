@@ -21,11 +21,11 @@ import { Footer } from '@/components/Footer'
 import { Wordmark } from '@/components/Wordmark'
 
 export const metadata: Metadata = {
-  title: 'Peu-Term v0.11.17 — Novidades · Terminal com IA pra Windows',
+  title: 'Peu-Term v0.11.18 — Novidades · Terminal com IA pra Windows',
   description:
     'Canvas espacial: espalhe terminais, notas e browser lado a lado. Andares = git worktrees com agentes em paralelo. Mais tema claro/escuro e configurações repaginadas. R$ 50, pagamento único, vitalício — quem já comprou recebe de graça.',
   openGraph: {
-    title: 'Peu-Term v0.11.17 — Canvas + tema claro + settings novos',
+    title: 'Peu-Term v0.11.18 — Canvas + tema claro + settings novos',
     description:
       'Canvas espacial, andares = branches git, cabos entre terminais. Tema claro/escuro e painel de configurações estilo macOS. R$ 50, pagamento único, vitalício.',
     type: 'website',
@@ -189,12 +189,12 @@ export default function NovididadesPage() {
             <div className="reveal reveal-1 mb-8 flex items-center gap-4">
               <span className="eyebrow">Saiu atualização grande</span>
               <span className="h-px w-10 bg-[color:var(--color-rule-strong)]" />
-              <span className="section-marker">v0.11.17 · 2026</span>
+              <span className="section-marker">v0.11.18 · 2026</span>
             </div>
 
             {/* Headline */}
             <h1 className="reveal reveal-2 headline-display max-w-5xl">
-              <span className="block">Peu-Term v0.11.17 —</span>
+              <span className="block">Peu-Term v0.11.18 —</span>
               <span className="block text-[color:var(--color-accent)]">
                 seu terminal ganhou
               </span>
@@ -221,7 +221,7 @@ export default function NovididadesPage() {
                 className="inline-flex items-center gap-2 border border-[color:var(--color-accent)] px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-[color:var(--color-accent)]"
               >
                 <Zap className="h-3 w-3" strokeWidth={2} />
-                v0.11.17 disponível agora
+                v0.11.18 disponível agora
               </span>
               <span
                 className="inline-flex items-center gap-2 border border-[color:var(--color-rule-strong)] px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-[color:var(--color-ink-dim)]"
@@ -457,12 +457,12 @@ export default function NovididadesPage() {
                   Recebe de <em style={{ color: 'var(--color-term-green)', fontStyle: 'italic' }}>graça</em>.
                 </h3>
                 <p className="text-[15px] leading-relaxed text-[color:var(--color-ink-muted)]">
-                  Comprou qualquer versão do Peu-Term? A v0.11.17 já tá no seu app. É só abrir — o auto-update entregou enquanto você dormia. Nenhum centavo extra.
+                  Comprou qualquer versão do Peu-Term? A v0.11.18 já tá no seu app. É só abrir — o auto-update entregou enquanto você dormia. Nenhum centavo extra.
                 </p>
                 <TerminalMockup
                   label="auto-update"
                   lines={[
-                    '● Peu-Term v0.11.17',
+                    '● Peu-Term v0.11.18',
                     '  Atualização instalada automaticamente',
                     '',
                     '  ✓ Canvas espacial + Andares git',

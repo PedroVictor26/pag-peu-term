@@ -105,7 +105,7 @@ export function Updates() {
           <div>
             <span className="section-marker">№02 · Novidades</span>
             <h2 className="headline-section mt-4">
-              v0.11.17 —{' '}
+              v0.11.18 —{' '}
               <em style={{ color: 'var(--color-accent)' }}>Canvas, tema e mais</em>.
             </h2>
           </div>
