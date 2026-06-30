@@ -17,7 +17,7 @@ const FAQS = [
   },
   {
     q: 'Quem já comprou antes precisa pagar de novo?',
-    a: 'Não. Pagamento único mesmo — quem já comprou qualquer versão anterior recebe o v0.11.11 de graça pela atualização automática.'
+    a: 'Não. Pagamento único mesmo — quem já comprou qualquer versão anterior recebe o v0.11.18 de graça pela atualização automática.'
   },
   {
     q: 'O Companion exige conta de nuvem?',

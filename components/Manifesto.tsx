@@ -71,7 +71,7 @@ export function Manifesto() {
                     }}
                   >
                     Pra Windows não existia. Agora existe.{' '}
-                    <span className="font-mono not-italic">v0.11.11</span>
+                    <span className="font-mono not-italic">v0.11.18</span>
                   </p>
                   <p className="pt-2 font-display-italic text-2xl leading-tight" style={{ color: 'var(--color-ink)' }}>
                     — Pedro V.
