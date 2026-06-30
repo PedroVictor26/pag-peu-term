@@ -138,7 +138,7 @@ export function Specs() {
                 Tech specs
               </h3>
               <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-dim)]">
-                v0.8.0
+                v0.11.18
               </span>
             </div>
             <div className="space-y-10">
