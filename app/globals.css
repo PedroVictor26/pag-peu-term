@@ -14,7 +14,7 @@
 
   --color-ink:         #E8EEF7;
   --color-ink-muted:   rgba(232, 238, 247, 0.58);
-  --color-ink-dim:     rgba(232, 238, 247, 0.32);
+  --color-ink-dim:     rgba(232, 238, 247, 0.50);
   --color-ink-quiet:   rgba(232, 238, 247, 0.12);
 
   --color-rule:        rgba(100, 160, 220, 0.10);
@@ -127,10 +127,29 @@ body {
   100% { transform: translate(-20px, 15px) scale(0.95); }
 }
 
-/* Reduced motion — desliga aurora e ambient layer */
+/* Reduced motion — desliga todas as animações não essenciais */
 @media (prefers-reduced-motion: reduce) {
   .aurora-blob { animation: none; }
-  .hero-ambient-layer img { opacity: 0.08 !important; transition: none !important; }
+  .hero-ambient-layer img { transition: none !important; }
+  /* animações decorativas */
+  .float,
+  .scanline,
+  .marquee-track,
+  .phone-float,
+  .cursor-blink,
+  .pulse-glow,
+  .badge-dot { animation: none !important; }
+  /* reveal: força estado final visível (evita AF-1 — conteúdo invisível sem JS) */
+  .reveal,
+  .reveal-1,
+  .reveal-2,
+  .reveal-3,
+  .reveal-4,
+  .reveal-5 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* ===========================================================================
@@ -238,7 +257,7 @@ body {
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  transition: all 0.22s cubic-bezier(0.22,1,0.36,1);
+  transition: background-color 0.22s cubic-bezier(0.22,1,0.36,1), transform 0.22s cubic-bezier(0.22,1,0.36,1), box-shadow 0.22s cubic-bezier(0.22,1,0.36,1);
   position: relative;
   clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
 }

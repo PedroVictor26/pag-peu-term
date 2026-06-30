@@ -1,3 +1,5 @@
+import { VERSION } from '@/lib/constants'
+
 export function Footer() {
   return (
     <footer className="relative">
@@ -83,7 +85,7 @@ export function Footer() {
         {/* Bottom meta */}
         <div className="mt-6 flex flex-col items-start justify-between gap-4 border-t border-[color:var(--color-rule)] pt-6 font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-ink-dim)] md:flex-row md:items-center">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-            <span>v0.11.11</span>
+            <span>{VERSION}</span>
             <span className="text-[color:var(--color-accent)]">◊</span>
             <span>Windows 10/11 · x64</span>
             <span className="text-[color:var(--color-accent)]">◊</span>

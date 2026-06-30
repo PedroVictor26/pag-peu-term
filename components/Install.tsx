@@ -1,4 +1,5 @@
 import { AlertTriangle, ArrowUpRight } from 'lucide-react'
+import { VERSION } from '@/lib/constants'
 
 interface Step {
   num: string
@@ -134,10 +135,10 @@ export function Install() {
               Pronto pra trocar 14 janelas por uma?
             </h4>
             <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.16em] text-[color:var(--color-ink-dim)]">
-              v0.8.0 · Windows 10/11 · ~4 MB
+              {VERSION} · Windows 10/11 · ~4 MB
             </p>
           </div>
-          <a href="#pricing" className="btn-prime accent-glow">
+          <a href="#pricing" className="btn-prime pulse-glow">
             Adquirir agora
             <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.2} />
           </a>

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { ArrowUpRight, Zap } from 'lucide-react'
-
-const CHECKOUT = 'https://academy.dantetesta.com.br/download/peu-term-windows'
+import { VERSION, CHECKOUT } from '@/lib/constants'
+import { Wordmark } from '@/components/Wordmark'
 
 export function Hero() {
   return (
@@ -20,7 +20,7 @@ export function Hero() {
           quality={60}
           sizes="100vw"
           className="object-cover object-center"
-          style={{ opacity: 0.18, mixBlendMode: 'lighten' }}
+          style={{ opacity: 0.07, mixBlendMode: 'lighten' }}
         />
       </div>
 
@@ -52,6 +52,7 @@ export function Hero() {
             { href: '#wizard', label: 'Wizard' },
             { href: '#agentes', label: 'Agentes' },
             { href: '#companion', label: 'Companion' },
+            { href: '/novidades', label: 'Novidades' },
             { href: '#pricing', label: 'Preço' }
           ].map(({ href, label }) => (
             <a
@@ -63,6 +64,16 @@ export function Hero() {
             </a>
           ))}
         </nav>
+        {/* Mobile CTA — header */}
+        <a
+          href={CHECKOUT}
+          target="_blank"
+          rel="noopener"
+          className="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-accent)] md:hidden"
+        >
+          Comprar →
+        </a>
+        {/* Desktop CTA */}
         <a
           href={CHECKOUT}
           target="_blank"
@@ -76,14 +87,23 @@ export function Hero() {
       {/* Hero content */}
       <div className="relative z-10 mx-auto max-w-[1280px] px-6 pb-16 pt-10 md:px-10 md:pb-24 md:pt-14">
         {/* Eyebrow badge */}
-        <div className="reveal reveal-1 mb-8 inline-flex items-center gap-3">
-          <span className="badge">
-            <span className="badge-dot" />
-            v0.11.11 · Novo
-          </span>
-          <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-[color:var(--color-ink-dim)]">
-            Windows · Tauri 2 · Nativo
-          </span>
+        <div className="reveal reveal-1 mb-8 flex flex-col gap-2">
+          <div className="inline-flex items-center gap-3">
+            <span className="badge">
+              <span className="badge-dot" />
+              {VERSION} · Canvas
+            </span>
+            <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-[color:var(--color-ink-dim)]">
+              Windows · Tauri 2 · Nativo
+            </span>
+          </div>
+          {/* Mobile: link pra /novidades abaixo do badge */}
+          <a
+            href="/novidades"
+            className="font-mono text-[10px] uppercase tracking-[0.16em] text-[color:var(--color-accent)] md:hidden"
+          >
+            {VERSION} — Canvas, tema claro → novidades
+          </a>
         </div>
 
         {/* Grid: texto + imagem */}
@@ -206,19 +226,6 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
-}
-
-function Wordmark() {
-  return (
-    <a href="/" className="flex items-baseline gap-2">
-      <span className="font-display-italic text-[1.6rem] leading-none" style={{ fontStyle: 'italic' }}>
-        Peu
-      </span>
-      <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--color-accent)]">
-        term
-      </span>
-    </a>
   )
 }
 

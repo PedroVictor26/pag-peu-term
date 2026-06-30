@@ -18,6 +18,7 @@ import {
   Smartphone,
 } from 'lucide-react'
 import { Footer } from '@/components/Footer'
+import { Wordmark } from '@/components/Wordmark'
 
 export const metadata: Metadata = {
   title: 'Peu-Term v0.11.17 — Novidades · Terminal com IA pra Windows',
@@ -38,26 +39,13 @@ const CHECKOUT = 'https://academy.dantetesta.com.br/download/peu-term-windows'
 // Sub-componentes inline (design system idêntico ao site)
 // ─────────────────────────────────────────────────────────────────────────────
 
-function Wordmark() {
-  return (
-    <a href="/" className="flex items-baseline gap-2">
-      <span className="font-display-italic text-2xl leading-none" style={{ fontStyle: 'italic' }}>
-        Peu
-      </span>
-      <span className="font-mono text-xs uppercase tracking-[0.2em] text-[color:var(--color-ink-muted)]">
-        term
-      </span>
-    </a>
-  )
-}
-
 function CtaBuy({ size = 'md' }: { size?: 'md' | 'lg' }) {
   return (
     <a
       href={CHECKOUT}
       target="_blank"
       rel="noopener"
-      className="btn-prime accent-glow"
+      className="btn-prime pulse-glow"
       style={size === 'lg' ? { padding: '1.125rem 2rem', fontSize: '0.8125rem' } : {}}
     >
       <span>Comprar · R$ 50</span>
@@ -160,7 +148,7 @@ export default function NovididadesPage() {
     <>
       {/* ── HEADER ─────────────────────────────────────────────────────────── */}
       <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between border-b border-[color:var(--color-rule)] px-6 py-5 md:px-10">
-        <Wordmark />
+        <Wordmark peuSize="text-2xl" />
         <nav className="hidden items-center gap-7 text-[11px] uppercase tracking-[0.18em] md:flex">
           <a href="/#updates" className="link-sweep" style={{ color: 'var(--color-ink-muted)' }}>
             Capacidades
@@ -575,7 +563,7 @@ export default function NovididadesPage() {
                 href={CHECKOUT}
                 target="_blank"
                 rel="noopener"
-                className="btn-prime accent-glow"
+                className="btn-prime pulse-glow"
                 style={{ padding: '1.125rem 2.5rem', fontSize: '0.875rem' }}
               >
                 <span>Comprar agora · R$ 50</span>
